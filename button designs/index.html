@@ -1,0 +1,390 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Button Design Collection</title>
+    <style>
+        /* Reset and Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        h1 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #2c3e50;
+        }
+        
+        .button-section {
+            margin-bottom: 40px;
+            padding: 20px;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h2 {
+            margin-bottom: 20px;
+            color: #3498db;
+            border-bottom: 2px solid #eee;
+            padding-bottom: 10px;
+        }
+        
+        .button-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+        }
+        
+        /* Base Button Styles */
+        .btn {
+            display: inline-block;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            font-weight: 600;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        /* Solid Buttons */
+        .btn-solid-primary {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-solid-primary:hover {
+            background-color: #2980b9;
+        }
+        
+        .btn-solid-success {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        .btn-solid-success:hover {
+            background-color: #27ae60;
+        }
+        
+        .btn-solid-danger {
+            background-color: #e74c3c;
+            color: white;
+        }
+        
+        .btn-solid-danger:hover {
+            background-color: #c0392b;
+        }
+        
+        .btn-solid-warning {
+            background-color: #f39c12;
+            color: white;
+        }
+        
+        .btn-solid-warning:hover {
+            background-color: #d35400;
+        }
+        
+        /* Outline Buttons */
+        .btn-outline-primary {
+            background-color: transparent;
+            color: #3498db;
+            border: 2px solid #3498db;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: #3498db;
+            color: white;
+        }
+        
+        .btn-outline-success {
+            background-color: transparent;
+            color: #2ecc71;
+            border: 2px solid #2ecc71;
+        }
+        
+        .btn-outline-success:hover {
+            background-color: #2ecc71;
+            color: white;
+        }
+        
+        /* Ghost Buttons */
+        .btn-ghost {
+            background-color: transparent;
+            color: #3498db;
+            border: none;
+        }
+        
+        .btn-ghost:hover {
+            background-color: rgba(52, 152, 219, 0.1);
+        }
+        
+        /* Rounded Buttons */
+        .btn-rounded {
+            border-radius: 50px;
+        }
+        
+        /* Icon Buttons */
+        .btn-icon {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        
+        /* Floating Action Button */
+        .btn-fab {
+            width: 56px;
+            height: 56px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            background-color: #3498db;
+            color: white;
+            font-size: 24px;
+        }
+        
+        .btn-fab:hover {
+            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+        
+        /* Gradient Buttons */
+        .btn-gradient {
+            background: linear-gradient(45deg, #3498db, #9b59b6);
+            color: white;
+            border: none;
+        }
+        
+        .btn-gradient:hover {
+            background: linear-gradient(45deg, #2980b9, #8e44ad);
+        }
+        
+        /* 3D Buttons */
+        .btn-3d {
+            position: relative;
+            box-shadow: 0 4px 0 #2980b9;
+            top: 0;
+        }
+        
+        .btn-3d:hover {
+            top: 2px;
+            box-shadow: 0 2px 0 #2980b9;
+        }
+        
+        .btn-3d:active {
+            top: 4px;
+            box-shadow: none;
+        }
+        
+        /* Animated Buttons */
+        .btn-animated {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-animated::after {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 5px;
+            height: 5px;
+            background: rgba(255, 255, 255, 0.5);
+            opacity: 0;
+            border-radius: 100%;
+            transform: scale(1, 1) translate(-50%);
+            transform-origin: 50% 50%;
+        }
+        
+        .btn-animated:focus:not(:active)::after {
+            animation: ripple 1s ease-out;
+        }
+        
+        @keyframes ripple {
+            0% {
+                transform: scale(0, 0);
+                opacity: 0.5;
+            }
+            100% {
+                transform: scale(20, 20);
+                opacity: 0;
+            }
+        }
+        
+        /* Toggle Switch Button */
+        .toggle-switch {
+            position: relative;
+            display: inline-block;
+            width: 60px;
+            height: 34px;
+        }
+        
+        .toggle-switch input {
+            opacity: 0;
+            width: 0;
+            height: 0;
+        }
+        
+        .toggle-slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: #ccc;
+            transition: .4s;
+            border-radius: 34px;
+        }
+        
+        .toggle-slider:before {
+            position: absolute;
+            content: "";
+            height: 26px;
+            width: 26px;
+            left: 4px;
+            bottom: 4px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+        
+        input:checked + .toggle-slider {
+            background-color: #2196F3;
+        }
+        
+        input:checked + .toggle-slider:before {
+            transform: translateX(26px);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .button-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .button-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Button Design Collection</h1>
+        
+        <!-- Solid Buttons -->
+        <section class="button-section">
+            <h2>Solid Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-solid-primary">Primary</button>
+                <button class="btn btn-solid-success">Success</button>
+                <button class="btn btn-solid-danger">Danger</button>
+                <button class="btn btn-solid-warning">Warning</button>
+            </div>
+        </section>
+        
+        <!-- Outline Buttons -->
+        <section class="button-section">
+            <h2>Outline Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-outline-primary">Primary</button>
+                <button class="btn btn-outline-success">Success</button>
+                <button class="btn btn-outline-primary btn-rounded">Rounded</button>
+            </div>
+        </section>
+        
+        <!-- Ghost Buttons -->
+        <section class="button-section">
+            <h2>Ghost Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-ghost">Ghost Button</button>
+                <button class="btn btn-ghost btn-rounded">Rounded Ghost</button>
+            </div>
+        </section>
+        
+        <!-- Icon Buttons -->
+        <section class="button-section">
+            <h2>Icon Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-solid-primary btn-icon">
+                    <span>★</span> Star
+                </button>
+                <button class="btn btn-outline-success btn-icon">
+                    <span>✓</span> Accept
+                </button>
+            </div>
+        </section>
+        
+        <!-- Floating Action Button -->
+        <section class="button-section">
+            <h2>Floating Action Button</h2>
+            <div class="button-grid">
+                <button class="btn-fab">+</button>
+            </div>
+        </section>
+        
+        <!-- Gradient Buttons -->
+        <section class="button-section">
+            <h2>Gradient Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-gradient">Gradient</button>
+                <button class="btn btn-gradient btn-rounded">Rounded Gradient</button>
+            </div>
+        </section>
+        
+        <!-- 3D Buttons -->
+        <section class="button-section">
+            <h2>3D Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-solid-primary btn-3d">3D Button</button>
+                <button class="btn btn-solid-danger btn-3d">3D Danger</button>
+            </div>
+        </section>
+        
+        <!-- Animated Buttons -->
+        <section class="button-section">
+            <h2>Animated Buttons</h2>
+            <div class="button-grid">
+                <button class="btn btn-solid-primary btn-animated">Ripple Effect</button>
+                <button class="btn btn-outline-primary btn-animated">Hover Me</button>
+            </div>
+        </section>
+        
+        <!-- Toggle Switch -->
+        <section class="button-section">
+            <h2>Toggle Switch</h2>
+            <div class="button-grid">
+                <label class="toggle-switch">
+                    <input type="checkbox">
+                    <span class="toggle-slider"></span>
+                </label>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
