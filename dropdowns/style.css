@@ -18,8 +18,8 @@ body {
     max-width: 1400px;
     margin: 0 auto;
     padding: 20px;
-    position: relative; /* Creates a containing block for absolute positioning */
-    z-index: 0; /* Base z-index */
+    position: relative;
+    z-index: 1;
 }
 
 header {
@@ -45,7 +45,7 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 30px;
     margin-bottom: 40px;
-    align-items: start; /* This ensures items align at the top */
+    align-items: start;
 }
 
 .dropdown-section {
@@ -56,7 +56,7 @@ h1 {
     padding: 30px;
     box-shadow: 0 8px 32px rgba(0,0,0,0.1);
     transition: all 0.3s ease;
-    margin-bottom: 10px; /* Add some spacing between sections */
+    margin-bottom: 10px;
 }
 
 .section-title {
@@ -71,7 +71,7 @@ h1 {
     position: relative;
     display: inline-block;
     width: 100%;
-    margin-bottom: 10px; /* Add space between dropdowns */
+    margin-bottom: 15px;
 }
 
 .dropbtn {
@@ -85,6 +85,7 @@ h1 {
     font-weight: 600;
     text-align: left;
     position: relative;
+    z-index: 1;
 }
 
 .dropbtn::after {
@@ -101,7 +102,7 @@ h1 {
 }
 
 .dropdown-content {
-    position: relative; 
+    position: relative;
     display: none;
     width: 100%;
     margin-top: 8px;
@@ -110,15 +111,17 @@ h1 {
     opacity: 0;
     transform: translateY(-10px);
     transition: all 0.3s ease;
+    z-index: 10;
 }
 
-/* .dropdown-content */.show {
+.dropdown-content.show {
     display: block;
     opacity: 1;
     transform: translateY(0);
+    animation: slideDown 0.3s ease;
 }
 
-/* .dropdown-content */ a {
+.dropdown-content a {
     display: block;
     padding: 15px 20px;
     text-decoration: none;
@@ -137,22 +140,22 @@ h1 {
     box-shadow: 0 4px 15px rgba(52, 152, 219, 0.3);
 }
 
-.basic-dropdown /* .dropbtn:hover */ {
+.basic-dropdown .dropbtn:hover {
     background: linear-gradient(135deg, #2980b9, #1f618d);
     transform: translateY(-2px);
     box-shadow: 0 6px 20px rgba(52, 152, 219, 0.4);
 }
 
-.basic-dropdown /* .dropdown-content */ {
+.basic-dropdown .dropdown-content {
     background: linear-gradient(135deg, #3498db, #2980b9);
     box-shadow: 0 10px 30px rgba(0,0,0,0.3);
 }
 
-.basic-dropdown /* .dropdown-content */ a {
+.basic-dropdown .dropdown-content a {
     color: white;
 }
 
-.basic-dropdown/*  .dropdown-content */ a:hover {
+.basic-dropdown .dropdown-content a:hover {
     background: rgba(255,255,255,0.2);
     padding-left: 30px;
 }
@@ -288,6 +291,7 @@ h1 {
     color: #e2e8f0;
     border: 1px solid #4a5568;
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border-radius: 12px;
 }
 
 .dark-dropdown .dropbtn:hover {
@@ -296,27 +300,26 @@ h1 {
     box-shadow: 0 6px 20px rgba(0,0,0,0.4);
 }
 
-.dark-dropdown /* .dropdown-content */ {
+.dark-dropdown .dropdown-content {
     background: #2d3748;
     border: 1px solid #4a5568;
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
 }
 
-.dark-dropdown /* .dropdown-content */ a {
+.dark-dropdown .dropdown-content a {
     color: #e2e8f0;
 }
 
-.dark-dropdown /* .dropdown-content */ a:hover {
+.dark-dropdown .dropdown-content a:hover {
     background: #4a5568;
     padding-left: 30px;
 }
 
 /* Mega Menu Styles */
 .mega-dropdown .dropdown-content {
-    position: relative;
-    display: none;
+    position: absolute;
+    left: 0;
     width: 100%;
-    margin-top: 8px;
 }
 
 .mega-content {
@@ -324,11 +327,10 @@ h1 {
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 20px;
     padding: 20px;
-    width: 100%;
-    left: 0;
     background: rgba(255,255,255,0.15);
     backdrop-filter: blur(20px);
     border: 1px solid rgba(255,255,255,0.2);
+    border-radius: 12px;
 }
 
 .mega-column {
@@ -381,8 +383,4 @@ h1 {
         opacity: 1;
         transform: translateY(0);
     }
-}
-
-.dropdown-content.show {
-    animation: slideDown 0.3s ease;
 }
