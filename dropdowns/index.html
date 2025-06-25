@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dropdown Menu Examples</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Advanced Dropdown Collection</h1>
+            <p class="subtitle">Modern, Responsive, and Stylish Dropdown Menus</p>
+        </header>
+
+        <div class="grid">
+            <section class="dropdown-section">
+                <h2 class="section-title">Basic Modern</h2>
+                <div class="dropdown basic-dropdown">
+                    <button class="dropbtn">Basic Modern Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Dashboard</a>
+                        <a href="#">Profile</a>
+                        <a href="#">Settings</a>
+                        <a href="#">Logout</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dropdown-section">
+                <h2 class="section-title">Glassmorphism</h2>
+                <div class="dropdown glass-dropdown">
+                    <button class="dropbtn">Glass Effect Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Home</a>
+                        <a href="#">About</a>
+                        <a href="#">Services</a>
+                        <a href="#">Portfolio</a>
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dropdown-section">
+                <h2 class="section-title">Royal Purple</h2>
+                <div class="dropdown royal-dropdown">
+                    <button class="dropbtn">Royal Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Premium Features</a>
+                        <a href="#">VIP Access</a>
+                        <a href="#">Exclusive Content</a>
+                        <a href="#">Crown Jewels</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dropdown-section">
+                <h2 class="section-title">Neon Cyber</h2>
+                <div class="dropdown neon-dropdown">
+                    <button class="dropbtn">Cyber Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Neural Network</a>
+                        <a href="#">Data Stream</a>
+                        <a href="#">Cyber Security</a>
+                        <a href="#">Digital Matrix</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dropdown-section">
+                <h2 class="section-title">Sunset Gradient</h2>
+                <div class="dropdown sunset-dropdown">
+                    <button class="dropbtn">Sunset Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Morning Light</a>
+                        <a href="#">Golden Hour</a>
+                        <a href="#">Sunset Glow</a>
+                        <a href="#">Twilight</a>
+                    </div>
+                </div>
+            </section>
+
+            <section class="dropdown-section">
+                <h2 class="section-title">Dark Professional</h2>
+                <div class="dropdown dark-dropdown">
+                    <button class="dropbtn">Professional Menu</button>
+                    <div class="dropdown-content">
+                        <a href="#">Business</a>
+                        <a href="#">Analytics</a>
+                        <a href="#">Reports</a>
+                        <a href="#">Administration</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="dropdown-section">
+            <h2 class="section-title">Mega Menu Example</h2>
+            <div class="dropdown mega-dropdown">
+                <button class="dropbtn">Explore Categories</button>
+                <div class="dropdown-content mega-content">
+                    <div class="mega-column">
+                        <h3>🎨 Design</h3>
+                        <a href="#">UI/UX Design</a>
+                        <a href="#">Graphic Design</a>
+                        <a href="#">Web Design</a>
+                        <a href="#">Brand Identity</a>
+                    </div>
+                    <div class="mega-column">
+                        <h3>💻 Development</h3>
+                        <a href="#">Frontend</a>
+                        <a href="#">Backend</a>
+                        <a href="#">Mobile Apps</a>
+                        <a href="#">DevOps</a>
+                    </div>
+                    <div class="mega-column">
+                        <h3>📊 Marketing</h3>
+                        <a href="#">Digital Marketing</a>
+                        <a href="#">SEO</a>
+                        <a href="#">Social Media</a>
+                        <a href="#">Analytics</a>
+                    </div>
+                    <div class="mega-column">
+                        <h3>🚀 Business</h3>
+                        <a href="#">Strategy</a>
+                        <a href="#">Consulting</a>
+                        <a href="#">Project Management</a>
+                        <a href="#">Leadership</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    const dropdowns = document.querySelectorAll('.dropdown');
+    
+    dropdowns.forEach(dropdown => {
+        const button = dropdown.querySelector('.dropbtn');
+        const content = dropdown.querySelector('.dropdown-content');
+        
+        button.addEventListener('click', function(e) {
+            e.stopPropagation();
+            
+            // Close all other dropdowns
+            dropdowns.forEach(otherDropdown => {
+                if (otherDropdown !== dropdown) {
+                    otherDropdown.classList.remove('active');
+                    otherDropdown.querySelector('.dropdown-content').classList.remove('show');
+                }
+            });
+            
+            // Toggle current dropdown
+            dropdown.classList.toggle('active');
+            content.classList.toggle('show');
+        });
+    });
+    
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', function() {
+        dropdowns.forEach(dropdown => {
+            dropdown.classList.remove('active');
+            dropdown.querySelector('.dropdown-content').classList.remove('show');
+        });
+    });
+    
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            dropdowns.forEach(dropdown => {
+                dropdown.classList.remove('active');
+                dropdown.querySelector('.dropdown-content').classList.remove('show');
+            });
+        }
+    });
+});
+    </script>
+</body>
+</html>
