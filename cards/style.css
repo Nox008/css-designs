@@ -1,29 +1,374 @@
-body{
+/* Base Styles */
+:root {
+    --primary-color: #4361ee;
+    --secondary-color: #3f37c9;
+    --accent-color: #4895ef;
+    --dark-color: #1a1a2e;
+    --light-color: #f8f9fa;
+    --success-color: #4cc9f0;
+    --warning-color: #f72585;
+    --info-color: #560bad;
+    --font-primary: 'Inter', sans-serif;
+    --border-radius: 12px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-.card-section {
-    margin-bottom: 40px;
-    padding: 20px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+body {
+    font-family: var(--font-primary);
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
+    color: var(--dark-color);
+    line-height: 1.6;
+    padding: 2rem;
 }
 
+/* Header Styles */
+.showcase-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.showcase-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, var(--primary-color), var(--warning-color));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.showcase-header p {
+    font-size: 1.1rem;
+    color: #666;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Card Showcase Layout */
+.card-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.glass-card-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    background-image: linear-gradient(to bottom right, white, red);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+.section-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--dark-color);
+    margin-bottom: 0.5rem;
+}
+
+/* Base Card Styles */
+.card {
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    transition: var(--transition);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+}
+
+.card-content {
+    font-size: 0.95rem;
+    color: inherit;
+    opacity: 0.9;
+}
+
+/* Individual Card Styles */
 .simple-card {
-    border: 2px solid black;
-    border-radius: 4px;
-    padding: 20px;
-    width: 30%;
+    background: white;
+    border: 1px solid #e1e1e1;
 }
 
 .color-card {
-    border: 2px solid black;
-    background: #3d3333;
-    color: aliceblue;
-    border-radius: 4px;
-    padding: 20px;
-    width: 30%;
+    background: var(--primary-color);
+    color: white;
+}
+
+/* Royal Crown Card */
+.royal-card {
+    background: linear-gradient(135deg, #ffd700, #ffed4e);
+    border: 3px solid #b8860b;
+    color: #4a4a4a;
+    box-shadow: 0 8px 25px rgba(184, 134, 11, 0.3);
+    text-align: center;
+}
+
+.crown {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+}
+
+.royal-card .card-title {
+    color: #8b4513;
+    font-family: serif;
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+/* Cyberpunk Neon Card */
+.cyberpunk-card {
+    background: #0a0a0a;
+    border: 2px solid #00ffff;
+    color: #00ffff;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+    font-family: 'Courier New', monospace;
+}
+
+.neon-accent {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #ff0080, #00ffff, #ff0080);
+    animation: neonPulse 2s infinite;
+}
+
+.cyberpunk-card .card-title {
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080;
+    letter-spacing: 2px;
+}
+
+/* Glass Morphism Card */
+.glass-card {
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+}
+
+/* Gradient Aurora Card */
+.gradient-card {
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #96ceb4, #feca57);
+    background-size: 300% 300%;
+    animation: gradientShift 4s ease infinite;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+/* Victorian Elegant Card */
+.victorian-card {
+    background: #f8f5f0;
+    border: 3px double #8b4513;
+    color: #4a4a4a;
+    font-family: serif;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(139, 69, 19, 0.3);
+}
+
+.ornament {
+    font-size: 1.5rem;
+    color: #8b4513;
+    margin: 10px 0;
+}
+
+.victorian-card .card-title {
+    color: #8b4513;
+    font-style: italic;
+}
+
+/* Holographic Card */
+.holographic-card {
+    background: linear-gradient(45deg, #ff0080, #00ffff, #ff8000, #8000ff);
+    background-size: 400% 400%;
+    animation: holographicShine 3s ease-in-out infinite;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+}
+
+.holographic-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
+    animation: holographicSweep 2s infinite;
+}
+
+/* Minimalist Shadow Card */
+.minimal-card {
+    background: white;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+}
+
+.minimal-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+}
+
+/* Retro Synthwave Card */
+.synthwave-card {
+    background: linear-gradient(135deg, #2d1b69, #11052c);
+    border: 2px solid #ff006e;
+    color: #ff006e;
+    box-shadow: 0 0 30px rgba(255, 0, 110, 0.3);
+    font-family: 'Courier New', monospace;
+}
+
+.grid-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image: 
+        linear-gradient(rgba(255, 0, 110, 0.1) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 0, 110, 0.1) 1px, transparent 1px);
+    background-size: 20px 20px;
+    animation: gridMove 4s linear infinite;
+}
+
+.synthwave-card .card-title {
+    color: #00ffff;
+    text-shadow: 0 0 10px #00ffff;
+    letter-spacing: 3px;
+}
+
+.synthwave-card .card-content {
+    text-shadow: 0 0 5px #ff006e;
+}
+
+/* New Card Types */
+/* 3D Floating Card */
+.floating-card {
+    background: white;
+    border: none;
+    box-shadow: 
+        0 1px 2px rgba(0,0,0,0.07),
+        0 2px 4px rgba(0,0,0,0.07),
+        0 4px 8px rgba(0,0,0,0.07),
+        0 8px 16px rgba(0,0,0,0.07),
+        0 16px 32px rgba(0,0,0,0.07),
+        0 32px 64px rgba(0,0,0,0.07);
+    transform-style: preserve-3d;
+    transform: perspective(500px) translateZ(20px);
+    transition: var(--transition);
+}
+
+.floating-card:hover {
+    transform: perspective(500px) translateZ(30px);
+}
+
+/* Animated Border Card */
+.animated-border-card {
+    background: white;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.animated-border-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border: 4px solid transparent;
+    border-radius: var(--border-radius);
+    background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4, #a18cd1, #a18cd1) border-box;
+    mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    mask-composite: exclude;
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) padding-box, 
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    animation: borderFlow 3s linear infinite;
+    background-size: 200% 100%;
+    z-index: -1;
+}
+
+/* Animations */
+@keyframes neonPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes holographicShine {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes holographicSweep {
+    0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+    100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
+}
+
+@keyframes gridMove {
+    0% { transform: translate(0, 0); }
+    100% { transform: translate(20px, 20px); }
+}
+
+@keyframes borderFlow {
+    0% { background-position: 0% 50%; }
+    100% { background-position: 200% 50%; }
+}
+
+/* Footer Styles */
+.showcase-footer {
+    text-align: center;
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid #e1e1e1;
+    color: #666;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .card-showcase {
+        grid-template-columns: 1fr;
+    }
+    
+    .showcase-header h1 {
+        font-size: 2rem;
+    }
 }
