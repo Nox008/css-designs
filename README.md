@@ -8,7 +8,8 @@ Whether you're a beginner looking to learn or a developer wanting to use ready-m
 This repository currently contains a growing set of basic yet beautifully styled components:
 
 - 🔘 **Buttons** – Different styles and hover effects  
-- ⬇️ **Dropdown Menus** – Clean and responsive options  
+- ⬇️ **Dropdown Menus** – Clean and responsive options
+- 🧧 **Cards** – Good Looking cards
 - ...and **more coming daily**!
 
 > ⚠️ Work in Progress: This is a growing collection. New components are added regularly as part of my daily contribution habit.
