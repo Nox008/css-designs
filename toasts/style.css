@@ -1,0 +1,188 @@
+/* Base Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #2c3e50, #34495e);
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.button-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+    margin-bottom: 30px;
+    max-width: 800px;
+}
+
+.show-toast {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+}
+
+.show-toast:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: translateY(-2px);
+}
+
+.toast {
+    position: fixed;
+    right: 20px;
+    padding: 15px 20px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    color: white;
+    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateX(100%);
+    z-index: 1000;
+    max-width: 350px;
+}
+
+.toast.active {
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.toast-icon {
+    font-size: 20px;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.toast-content {
+    flex-grow: 1;
+}
+
+.toast-content h3 {
+    margin: 0 0 5px 0;
+    font-size: 16px;
+    font-weight: 600;
+}
+
+.toast-content p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+.toast-close {
+    background: transparent;
+    border: none;
+    color: inherit;
+    font-size: 18px;
+    cursor: pointer;
+    opacity: 0.7;
+    transition: opacity 0.2s;
+    padding: 5px;
+    line-height: 1;
+}
+
+.toast-close:hover {
+    opacity: 1;
+}
+
+/* Toast 1 - Basic Green Glass */
+.toast-1 {
+    background: rgba(46, 125, 50, 0.25);
+    border: 1px solid rgba(76, 175, 80, 0.3);
+}
+
+.toast-1 .toast-icon {
+    background: rgba(76, 175, 80, 0.3);
+}
+
+/* Toast 2 - Dark Glass with Accent */
+.toast-2 {
+    background: rgba(33, 33, 33, 0.3);
+    border: 1px solid rgba(255, 193, 7, 0.3);
+}
+
+.toast-2 .toast-icon {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+/* Toast 3 - Frosted Green Glass */
+.toast-3 {
+    background: rgba(27, 94, 32, 0.2);
+    border: 1px solid rgba(102, 187, 106, 0.4);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+}
+
+.toast-3 .toast-icon {
+    background: linear-gradient(135deg, rgba(102, 187, 106, 0.4), rgba(56, 142, 60, 0.6));
+    color: #a5d6a7;
+}
+
+/* Toast 4 - Dark Glass with Gradient Border */
+.toast-4 {
+    background: rgba(38, 50, 56, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.toast-4::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #4db6ac, #81c784);
+}
+
+.toast-4 .toast-icon {
+    background: rgba(77, 182, 172, 0.2);
+    color: #4db6ac;
+}
+
+/* Toast 5 - Emerald Glass with Shadow */
+.toast-5 {
+    background: rgba(0, 121, 107, 0.25);
+    box-shadow: 0 8px 32px rgba(0, 150, 136, 0.2);
+    border: 1px solid rgba(0, 150, 136, 0.4);
+}
+
+.toast-5 .toast-icon {
+    background: rgba(0, 150, 136, 0.4);
+    box-shadow: 0 0 10px rgba(0, 200, 183, 0.3);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .button-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .toast {
+        max-width: calc(100% - 40px);
+        top: 10px;
+        right: 10px;
+        left: 10px;
+    }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom CSS Toasts</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="button-container">
+        <button class="show-toast" data-toast="1">Success Toast</button>
+        <button class="show-toast" data-toast="2">Warning!</button>
+        <button class="show-toast" data-toast="3">Premium</button>
+        <button class="show-toast" data-toast="4">Information</button>
+        <button class="show-toast" data-toast="5">Payments</button>
+    </div>
+
+    <!-- Toast Templates -->
+    <div class="toast toast-1" id="toast-1">
+        <div class="toast-icon">✓</div>
+        <div class="toast-content">
+            <h3>Success!</h3>
+            <p>Your action was completed successfully.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast toast-2" id="toast-2">
+        <div class="toast-icon">!</div>
+        <div class="toast-content">
+            <h3>Warning</h3>
+            <p>This action cannot be undone.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast toast-3" id="toast-3">
+        <div class="toast-icon">★</div>
+        <div class="toast-content">
+            <h3>Premium Feature</h3>
+            <p>You've unlocked a premium feature!</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast toast-4" id="toast-4">
+        <div class="toast-icon">i</div>
+        <div class="toast-content">
+            <h3>Information</h3>
+            <p>Your profile has been updated.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast toast-5" id="toast-5">
+        <div class="toast-icon">✓</div>
+        <div class="toast-content">
+            <h3>Payment Received</h3>
+            <p>$42.00 has been added to your account.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
