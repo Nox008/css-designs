@@ -10,6 +10,7 @@ This repository currently contains a growing set of basic yet beautifully styled
 - 🔘 **Buttons** – Different styles and hover effects  
 - ⬇️ **Dropdown Menus** – Clean and responsive options
 - 🧧 **Cards** – Good Looking cards
+- 🍞 **Toasts** – Toasts, because why not!!
 - ...and **more coming daily**!
 
 > ⚠️ Work in Progress: This is a growing collection. New components are added regularly as part of my daily contribution habit.
