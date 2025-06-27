@@ -3,20 +3,64 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Custom CSS Toasts</title>
+    <title>Custom CSS Toasts - Multiple Designs</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="button-container">
-        <button class="show-toast" data-toast="1">Success Toast</button>
-        <button class="show-toast" data-toast="2">Warning!</button>
-        <button class="show-toast" data-toast="3">Premium</button>
-        <button class="show-toast" data-toast="4">Information</button>
-        <button class="show-toast" data-toast="5">Payments</button>
+    <div class="main-container">
+        <h1>Toast Notification Designs</h1>
+        
+        <!-- Glass Toasts Section -->
+        <section class="toast-section">
+            <h2>Glass Toasts</h2>
+            <div class="button-container">
+                <button class="show-toast" data-toast="glass-1">Success Toast</button>
+                <button class="show-toast" data-toast="glass-2">Warning!</button>
+                <button class="show-toast" data-toast="glass-3">Premium</button>
+                <button class="show-toast" data-toast="glass-4">Information</button>
+                <button class="show-toast" data-toast="glass-5">Payments</button>
+            </div>
+        </section>
+
+        <!-- Royalty Toasts Section -->
+        <section class="toast-section">
+            <h2>Royalty Toasts</h2>
+            <div class="button-container">
+                <button class="show-toast royalty-btn" data-toast="royalty-1">Crown Achievement</button>
+                <button class="show-toast royalty-btn" data-toast="royalty-2">Royal Warning</button>
+                <button class="show-toast royalty-btn" data-toast="royalty-3">Noble Status</button>
+                <button class="show-toast royalty-btn" data-toast="royalty-4">Kingdom News</button>
+                <button class="show-toast royalty-btn" data-toast="royalty-5">Treasury Update</button>
+            </div>
+        </section>
+
+        <!-- Neon Futuristic Toasts Section -->
+        <section class="toast-section">
+            <h2>Neon Futuristic Toasts</h2>
+            <div class="button-container">
+                <button class="show-toast neon-btn" data-toast="neon-1">System Online</button>
+                <button class="show-toast neon-btn" data-toast="neon-2">Alert Protocol</button>
+                <button class="show-toast neon-btn" data-toast="neon-3">Access Granted</button>
+                <button class="show-toast neon-btn" data-toast="neon-4">Data Stream</button>
+                <button class="show-toast neon-btn" data-toast="neon-5">Credits Added</button>
+            </div>
+        </section>
+
+        <!-- Pencil Cartoon Toasts Section -->
+        <section class="toast-section">
+            <h2>Pencil Cartoon Toasts</h2>
+            <div class="button-container">
+                <button class="show-toast cartoon-btn" data-toast="cartoon-1">Great Job!</button>
+                <button class="show-toast cartoon-btn" data-toast="cartoon-2">Oops!</button>
+                <button class="show-toast cartoon-btn" data-toast="cartoon-3">Super Power!</button>
+                <button class="show-toast cartoon-btn" data-toast="cartoon-4">Fun Fact</button>
+                <button class="show-toast cartoon-btn" data-toast="cartoon-5">Coins Earned</button>
+            </div>
+        </section>
     </div>
 
-    <!-- Toast Templates -->
-    <div class="toast toast-1" id="toast-1">
+    <!-- Glass Toast Templates -->
+    <div class="toast glass-toast toast-glass-1" id="toast-glass-1">
         <div class="toast-icon">✓</div>
         <div class="toast-content">
             <h3>Success!</h3>
@@ -25,7 +69,7 @@
         <button class="toast-close">&times;</button>
     </div>
 
-    <div class="toast toast-2" id="toast-2">
+    <div class="toast glass-toast toast-glass-2" id="toast-glass-2">
         <div class="toast-icon">!</div>
         <div class="toast-content">
             <h3>Warning</h3>
@@ -34,7 +78,7 @@
         <button class="toast-close">&times;</button>
     </div>
 
-    <div class="toast toast-3" id="toast-3">
+    <div class="toast glass-toast toast-glass-3" id="toast-glass-3">
         <div class="toast-icon">★</div>
         <div class="toast-content">
             <h3>Premium Feature</h3>
@@ -43,7 +87,7 @@
         <button class="toast-close">&times;</button>
     </div>
 
-    <div class="toast toast-4" id="toast-4">
+    <div class="toast glass-toast toast-glass-4" id="toast-glass-4">
         <div class="toast-icon">i</div>
         <div class="toast-content">
             <h3>Information</h3>
@@ -52,11 +96,149 @@
         <button class="toast-close">&times;</button>
     </div>
 
-    <div class="toast toast-5" id="toast-5">
+    <div class="toast glass-toast toast-glass-5" id="toast-glass-5">
         <div class="toast-icon">✓</div>
         <div class="toast-content">
             <h3>Payment Received</h3>
             <p>$42.00 has been added to your account.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Royalty Toast Templates -->
+    <div class="toast royalty-toast toast-royalty-1" id="toast-royalty-1">
+        <div class="toast-icon">👑</div>
+        <div class="toast-content">
+            <h3>Crown Achievement</h3>
+            <p>You have earned a royal distinction!</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast royalty-toast toast-royalty-2" id="toast-royalty-2">
+        <div class="toast-icon">⚠️</div>
+        <div class="toast-content">
+            <h3>Royal Warning</h3>
+            <p>The kingdom requires your attention.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast royalty-toast toast-royalty-3" id="toast-royalty-3">
+        <div class="toast-icon">🏰</div>
+        <div class="toast-content">
+            <h3>Noble Status</h3>
+            <p>Your rank has been elevated to nobility.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast royalty-toast toast-royalty-4" id="toast-royalty-4">
+        <div class="toast-icon">📜</div>
+        <div class="toast-content">
+            <h3>Kingdom News</h3>
+            <p>New royal decree has been published.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast royalty-toast toast-royalty-5" id="toast-royalty-5">
+        <div class="toast-icon">💰</div>
+        <div class="toast-content">
+            <h3>Treasury Update</h3>
+            <p>500 gold coins added to your vault.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Neon Futuristic Toast Templates -->
+    <div class="toast neon-toast toast-neon-1" id="toast-neon-1">
+        <div class="toast-icon">⚡</div>
+        <div class="toast-content">
+            <h3>SYSTEM ONLINE</h3>
+            <p>All systems operational. Ready to proceed.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast neon-toast toast-neon-2" id="toast-neon-2">
+        <div class="toast-icon">⚠</div>
+        <div class="toast-content">
+            <h3>ALERT PROTOCOL</h3>
+            <p>Security breach detected. Initiating lockdown.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast neon-toast toast-neon-3" id="toast-neon-3">
+        <div class="toast-icon">🔓</div>
+        <div class="toast-content">
+            <h3>ACCESS GRANTED</h3>
+            <p>Level 5 clearance activated successfully.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast neon-toast toast-neon-4" id="toast-neon-4">
+        <div class="toast-icon">📡</div>
+        <div class="toast-content">
+            <h3>DATA STREAM</h3>
+            <p>Neural network sync complete. Data uploaded.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast neon-toast toast-neon-5" id="toast-neon-5">
+        <div class="toast-icon">💎</div>
+        <div class="toast-content">
+            <h3>CREDITS ADDED</h3>
+            <p>+2500 quantum credits transferred to account.</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <!-- Cartoon Toast Templates -->
+    <div class="toast cartoon-toast toast-cartoon-1" id="toast-cartoon-1">
+        <div class="toast-icon">😊</div>
+        <div class="toast-content">
+            <h3>Great Job!</h3>
+            <p>You did something awesome today!</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast cartoon-toast toast-cartoon-2" id="toast-cartoon-2">
+        <div class="toast-icon">😅</div>
+        <div class="toast-content">
+            <h3>Oops!</h3>
+            <p>Don't worry, everyone makes mistakes!</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast cartoon-toast toast-cartoon-3" id="toast-cartoon-3">
+        <div class="toast-icon">🦸</div>
+        <div class="toast-content">
+            <h3>Super Power!</h3>
+            <p>You've unlocked a new ability!</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast cartoon-toast toast-cartoon-4" id="toast-cartoon-4">
+        <div class="toast-icon">🧠</div>
+        <div class="toast-content">
+            <h3>Fun Fact</h3>
+            <p>Did you know octopuses have three hearts?</p>
+        </div>
+        <button class="toast-close">&times;</button>
+    </div>
+
+    <div class="toast cartoon-toast toast-cartoon-5" id="toast-cartoon-5">
+        <div class="toast-icon">🪙</div>
+        <div class="toast-content">
+            <h3>Coins Earned</h3>
+            <p>You collected 25 shiny coins! Keep going!</p>
         </div>
         <button class="toast-close">&times;</button>
     </div>
