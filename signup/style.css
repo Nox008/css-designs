@@ -1,0 +1,245 @@
+:root {
+    --primary: #4361ee;
+    --primary-light: #4895ef;
+    --dark: #212529;
+    --light: #f8f9fa;
+    --glass: rgba(255, 255, 255, 0.2);
+    --twitter-blue: #1da1f2;
+    --modern-accent: #7209b7;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #ffa17f, #00223e);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-height: 100vh;
+}
+
+h1 {
+    margin: 20px 0 40px;
+    color: var(--dark);
+    font-weight: 600;
+    text-align: center;
+}
+
+.showcase-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    width: 100%;
+    max-width: 1400px;
+}
+
+.login-card {
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s ease;
+}
+
+/* .login-card:hover {
+    transform: translateY(-5px);
+} */
+
+.login-card h2 {
+    margin-bottom: 20px;
+    font-weight: 500;
+    color: inherit;
+}
+
+.login-card form {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.login-card input {
+    padding: 12px 15px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+.login-card input:focus {
+    outline: none;
+    border-color: var(--primary);
+    box-shadow: 0 0 0 2px rgba(67, 97, 238, 0.2);
+}
+
+.login-card button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.login-card button:hover {
+    transform: translateY(-2px);
+}
+
+/* Classic Style */
+.login-card.classic {
+    background-color: white;
+    color: var(--dark);
+}
+
+.login-card.classic button {
+    background-color: var(--primary);
+    color: white;
+}
+
+.login-card.classic button:hover {
+    background-color: var(--primary-light);
+}
+
+/* Glassmorphism Style */
+.login-card.glass {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border: 1px solid var(--glass);
+    color: white;
+}
+
+.login-card.glass input {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid var(--glass);
+    color: white;
+}
+
+.login-card.glass input::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.login-card.glass input:focus {
+    border-color: white;
+    box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
+}
+
+.login-card.glass button {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 1px solid var(--glass);
+}
+
+.login-card.glass button:hover {
+    background: rgba(255, 255, 255, 0.3);
+}
+
+/* Dark (Twitter-like) Style */
+.login-card.dark {
+    background-color: var(--dark);
+    color: white;
+}
+
+.login-card.dark input {
+    background-color: #2d3748;
+    border-color: #4a5568;
+    color: white;
+}
+
+.login-card.dark input::placeholder {
+    color: #a0aec0;
+}
+
+.login-card.dark input:focus {
+    border-color: var(--twitter-blue);
+    box-shadow: 0 0 0 2px rgba(29, 161, 242, 0.2);
+}
+
+.login-card.dark button {
+    background-color: var(--twitter-blue);
+    color: white;
+}
+
+.login-card.dark button:hover {
+    background-color: #1a8cd8;
+}
+
+/* Modern Style */
+.login-card.modern {
+    background-color: white;
+    border: 2px solid var(--modern-accent);
+    color: var(--dark);
+}
+
+.login-card.modern h2 {
+    color: var(--modern-accent);
+}
+
+.login-card.modern input:focus {
+    border-color: var(--modern-accent);
+    box-shadow: 0 0 0 2px rgba(114, 9, 183, 0.2);
+}
+
+.login-card.modern button {
+    background-color: var(--modern-accent);
+    color: white;
+}
+
+.login-card.modern button:hover {
+    background-color: #5a0b8f;
+}
+
+.error-message {
+    color: #e53e3e;
+    font-size: 14px;
+    margin-top: -10px;
+    margin-bottom: 5px;
+    text-align: center;
+}
+
+@media (max-width: 768px) {
+    .showcase-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* body {
+    margin: 0;
+    padding: 10px;
+    padding-top: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+#container {
+    border: 1px solid  black;
+    padding: 10px;
+    border-radius: 10px;
+}
+form {
+    display: flex;
+    flex-direction: column;
+}
+input {
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: blue;
+    color: white;
+    border-radius: 5px;
+}
+
+button:hover {
+    background-color: rgb(77, 77, 252);
+} */
