@@ -11,6 +11,7 @@ This repository currently contains a growing set of basic yet beautifully styled
 - ⬇️ **Dropdown Menus** – Clean and responsive options
 - 🧧 **Cards** – Good Looking cards
 - 🍞 **Toasts** – Toasts, because why not!!
+- 📝 **Login Forms** – In we Go
 - ...and **more coming daily**!
 
 > ⚠️ Work in Progress: This is a growing collection. New components are added regularly as part of my daily contribution habit.
