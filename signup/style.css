@@ -6,6 +6,14 @@
     --glass: rgba(255, 255, 255, 0.2);
     --twitter-blue: #1da1f2;
     --modern-accent: #7209b7;
+    --royal-gold: #ffd700;
+    --royal-purple: #663399;
+    --neon-pink: #ff00ff;
+    --neon-cyan: #00ffff;
+    --nature-green: #228b22;
+    --nature-light: #90ee90;
+    --cartoon-blue: #4169e1;
+    --cartoon-yellow: #ffd700;
 }
 
 * {
@@ -199,12 +207,278 @@ h1 {
     background-color: #5a0b8f;
 }
 
+/* Royal Style */
+.login-card.royal {
+    background: linear-gradient(135deg, var(--royal-purple), #4a148c);
+    color: var(--royal-gold);
+    border: 3px solid var(--royal-gold);
+    box-shadow: 0 15px 35px rgba(255, 215, 0, 0.3);
+    position: relative;
+}
+
+.login-card.royal::before {
+    content: '';
+    position: absolute;
+    top: -2px;
+    left: -2px;
+    right: -2px;
+    bottom: -2px;
+    background: linear-gradient(45deg, var(--royal-gold), #ffed4e, var(--royal-gold));
+    border-radius: 15px;
+    z-index: -1;
+    animation: royal-glow 3s ease-in-out infinite alternate;
+}
+
+@keyframes royal-glow {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.login-card.royal h2 {
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    font-size: 1.3em;
+}
+
+.login-card.royal input {
+    background: rgba(255, 215, 0, 0.1);
+    border: 2px solid var(--royal-gold);
+    color: var(--royal-gold);
+    font-weight: 500;
+}
+
+.login-card.royal input::placeholder {
+    color: rgba(255, 215, 0, 0.8);
+}
+
+.login-card.royal input:focus {
+    border-color: #ffed4e;
+    box-shadow: 0 0 15px rgba(255, 215, 0, 0.5);
+}
+
+.login-card.royal button {
+    background: linear-gradient(45deg, var(--royal-gold), #ffed4e);
+    color: var(--royal-purple);
+    font-weight: 600;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+    border: 2px solid var(--royal-gold);
+}
+
+.login-card.royal button:hover {
+    background: linear-gradient(45deg, #ffed4e, var(--royal-gold));
+    transform: translateY(-3px) scale(1.02);
+}
+
+/* Neon Cyberpunk Style */
+.login-card.neon {
+    background: #0a0a0a;
+    color: var(--neon-cyan);
+    border: 2px solid var(--neon-cyan);
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        inset 0 0 20px rgba(0, 255, 255, 0.1);
+    animation: neon-pulse 2s ease-in-out infinite alternate;
+}
+
+@keyframes neon-pulse {
+    0% { 
+        box-shadow: 
+            0 0 20px rgba(0, 255, 255, 0.5),
+            inset 0 0 20px rgba(0, 255, 255, 0.1);
+    }
+    100% { 
+        box-shadow: 
+            0 0 30px rgba(0, 255, 255, 0.8),
+            inset 0 0 30px rgba(0, 255, 255, 0.2);
+    }
+}
+
+.login-card.neon h2 {
+    text-shadow: 0 0 10px var(--neon-cyan);
+    color: var(--neon-pink);
+}
+
+.login-card.neon input {
+    background: rgba(0, 255, 255, 0.1);
+    border: 1px solid var(--neon-cyan);
+    color: var(--neon-cyan);
+    text-shadow: 0 0 5px currentColor;
+}
+
+.login-card.neon input::placeholder {
+    color: rgba(0, 255, 255, 0.6);
+}
+
+.login-card.neon input:focus {
+    border-color: var(--neon-pink);
+    box-shadow: 0 0 15px rgba(255, 0, 255, 0.5);
+    color: var(--neon-pink);
+}
+
+.login-card.neon button {
+    background: linear-gradient(45deg, var(--neon-pink), var(--neon-cyan));
+    color: #000;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.login-card.neon button:hover {
+    background: linear-gradient(45deg, var(--neon-cyan), var(--neon-pink));
+    box-shadow: 0 0 20px rgba(255, 0, 255, 0.7);
+    transform: translateY(-2px);
+}
+
+/* Natural Green Style */
+.login-card.nature {
+    background: linear-gradient(135deg, #228b22, #32cd32);
+    color: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 25px rgba(34, 139, 34, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.login-card.nature::before {
+    content: '🌱';
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 2em;
+    opacity: 0.3;
+    animation: grow 4s ease-in-out infinite;
+}
+
+@keyframes grow {
+    0%, 100% { transform: scale(1) rotate(0deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+}
+
+.login-card.nature h2 {
+    text-shadow: 1px 1px 3px rgba(0, 100, 0, 0.7);
+}
+
+.login-card.nature input {
+    background: rgba(255, 255, 255, 0.9);
+    border: 2px solid var(--nature-light);
+    color: var(--nature-green);
+    border-radius: 25px;
+}
+
+.login-card.nature input::placeholder {
+    color: rgba(34, 139, 34, 0.7);
+}
+
+.login-card.nature input:focus {
+    border-color: #00ff00;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    background: rgba(255, 255, 255, 1);
+}
+
+.login-card.nature button {
+    background: linear-gradient(45deg, #32cd32, #00ff00);
+    color: var(--nature-green);
+    font-weight: 600;
+    border-radius: 25px;
+    border: 2px solid #00ff00;
+}
+
+.login-card.nature button:hover {
+    background: linear-gradient(45deg, #00ff00, #32cd32);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 255, 0, 0.4);
+}
+
+/* Cartoonish Style */
+.login-card.cartoon {
+    background: linear-gradient(135deg, #ff6b6b, #4ecdc4);
+    color: white;
+    border: 4px solid #fff;
+    border-radius: 25px;
+    box-shadow: 
+        0 8px 16px rgba(0, 0, 0, 0.2),
+        0 0 0 8px #ff6b6b;
+    position: relative;
+    transform: rotate(-1deg);
+}
+
+.login-card.cartoon:hover {
+    transform: rotate(0deg) scale(1.02);
+    animation: cartoon-bounce 0.6s ease;
+}
+
+@keyframes cartoon-bounce {
+    0%, 100% { transform: rotate(0deg) scale(1.02); }
+    25% { transform: rotate(1deg) scale(1.05); }
+    75% { transform: rotate(-1deg) scale(1.05); }
+}
+
+.login-card.cartoon h2 {
+    font-size: 1.4em;
+    text-shadow: 3px 3px 0px #ff1744;
+    color: #fff200;
+}
+
+.login-card.cartoon input {
+    background: #fff;
+    border: 3px solid var(--cartoon-blue);
+    color: var(--cartoon-blue);
+    border-radius: 15px;
+    font-weight: 500;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.login-card.cartoon input::placeholder {
+    color: rgba(65, 105, 225, 0.7);
+}
+
+.login-card.cartoon input:focus {
+    border-color: var(--cartoon-yellow);
+    box-shadow: 
+        inset 0 2px 4px rgba(0, 0, 0, 0.1),
+        0 0 0 3px rgba(255, 215, 0, 0.3);
+    transform: scale(1.02);
+}
+
+.login-card.cartoon button {
+    background: linear-gradient(45deg, var(--cartoon-yellow), #ff9800);
+    color: var(--cartoon-blue);
+    font-weight: 700;
+    border-radius: 20px;
+    border: 3px solid #fff;
+    text-transform: uppercase;
+    font-size: 0.9em;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.login-card.cartoon button:hover {
+    background: linear-gradient(45deg, #ff9800, var(--cartoon-yellow));
+    transform: translateY(-3px) scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
 .error-message {
     color: #e53e3e;
     font-size: 14px;
     margin-top: -10px;
     margin-bottom: 5px;
     text-align: center;
+}
+
+/* Special error styles for themed cards */
+.login-card.royal .error-message {
+    color: #ff6b6b;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+}
+
+.login-card.neon .error-message {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.login-card.cartoon .error-message {
+    color: #ff1744;
+    font-weight: 600;
+    text-shadow: 1px 1px 0px #fff;
 }
 
 @media (max-width: 768px) {
