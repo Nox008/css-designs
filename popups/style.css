@@ -41,6 +41,7 @@ h1 {
     font-size: 1rem;
     cursor: pointer;
     transition: all 0.3s ease;
+    font-weight: 600;
 }
 
 .btn-default {
@@ -63,9 +64,41 @@ h1 {
     color: white;
 }
 
+.btn-royal {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 2px solid #ffd700;
+    box-shadow: 0 4px 15px rgba(118, 75, 162, 0.4);
+}
+
+.btn-neon {
+    background: #1a1a1a;
+    color: #00ff41;
+    border: 2px solid #00ff41;
+    box-shadow: 0 0 10px #00ff41;
+    text-shadow: 0 0 5px #00ff41;
+}
+
+.btn-glass {
+    background: rgba(255, 255, 255, 0.15);
+    color: #333;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.btn-cyber {
+    background: linear-gradient(45deg, #ff0080, #ff8c00);
+    color: white;
+    border: 2px solid #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    box-shadow: 0 0 15px rgba(255, 0, 128, 0.5);
+}
+
 .btn:hover {
     opacity: 0.9;
     transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
 }
 
 /* Popup/Modal Styles */
@@ -92,6 +125,7 @@ h1 {
     font-size: 1.5rem;
     cursor: pointer;
     color: #7f8c8d;
+    transition: all 0.3s ease;
 }
 
 .popup-close:hover {
@@ -137,15 +171,261 @@ h1 {
     padding: 2rem;
 }
 
+.popup-slide .popup-close {
+    color: white;
+}
+
 /* Notification */
 .popup-notification {
     bottom: 20px;
     right: 20px;
     background: #f39c12;
-    color: black;
+    color: white;
     border-radius: 4px;
     padding: 1rem 2rem;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Royal Modal - Fixed */
+.popup-royal {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 350px;
+    max-width: 80%;
+    text-align: center;
+    animation: royalEntrance 0.5s ease-out;
+}
+
+.popup-royal .popup-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: 3px solid #ffd700;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(102, 126, 234, 0.6);
+    position: relative;
+    overflow: hidden;
+    padding: 2.5rem;
+}
+
+.popup-royal .popup-content::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent 45%,
+        rgba(255, 215, 0, 0.1) 50%,
+        transparent 55%
+    );
+    transform: rotate(30deg);
+    animation: royalShine 3s linear infinite;
+}
+
+.popup-royal .popup-close {
+    color: #ffd700;
+    font-size: 1.8rem;
+    text-shadow: 0 0 5px #ffd700;
+    background: rgba(255, 215, 0, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-royal .popup-close:hover {
+    color: white;
+    background: rgba(255, 215, 0, 0.3);
+}
+
+/* Neon Popup - Fixed */
+.popup-neon {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 320px;
+    max-width: 90%;
+    text-align: center;
+    animation: neonFlicker 0.5s ease-out;
+}
+
+.popup-neon .popup-content {
+    background: #0d0d0d;
+    color: #00ff9d;
+    border: 2px solid #00ff9d;
+    border-radius: 8px;
+    box-shadow: 
+        0 0 15px #00ff9d,
+        inset 0 0 10px rgba(0, 255, 157, 0.2);
+    font-family: 'Courier New', monospace;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup-neon .popup-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(0, 255, 157, 0.1),
+        transparent
+    );
+    animation: neonScan 2s linear infinite;
+}
+
+.popup-neon .popup-close {
+    color: #00ff9d;
+    text-shadow: 0 0 5px #00ff9d;
+    font-size: 1.8rem;
+    background: rgba(0, 255, 157, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.popup-neon .popup-close:hover {
+    color: #ff009d;
+    text-shadow: 0 0 10px #ff009d;
+    background: rgba(255, 0, 157, 0.2);
+}
+
+/* Glass Popup - Fixed */
+.popup-glass {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 320px;
+    max-width: 90%;
+    text-align: center;
+    animation: glassFloat 0.5s ease-out;
+}
+
+.popup-glass .popup-content {
+    background: rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    color: #333;
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.popup-glass .popup-content::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        to bottom right,
+        transparent 45%,
+        rgba(255, 255, 255, 0.1) 50%,
+        transparent 55%
+    );
+    transform: rotate(30deg);
+    animation: glassShine 4s linear infinite;
+}
+
+.popup-glass .popup-close {
+    color: rgba(0, 0, 0, 0.6);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.3);
+}
+
+.popup-glass .popup-close:hover {
+    background: rgba(255, 255, 255, 0.5);
+    color: #333;
+}
+
+/* Cyber Popup - Fixed */
+.popup-cyber {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 340px;
+    max-width: 90%;
+    text-align: center;
+    animation: cyberEntrance 0.6s ease-out;
+}
+
+.popup-cyber .popup-content {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+    color: #00ffff;
+    border: 2px solid #00ffff;
+    border-radius: 12px;
+    box-shadow: 
+        0 0 20px rgba(0, 255, 255, 0.5),
+        0 0 40px rgba(255, 0, 128, 0.3);
+    padding: 2rem;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Courier New', monospace;
+}
+
+.popup-cyber .popup-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        linear-gradient(
+            45deg, 
+            transparent 48%, 
+            rgba(0, 255, 255, 0.05) 50%, 
+            transparent 52%
+        );
+    background-size: 20px 20px;
+    animation: cyberGrid 2s linear infinite;
+    pointer-events: none;
+}
+
+.popup-cyber .popup-close {
+    color: #00ffff;
+    text-shadow: 0 0 5px #00ffff;
+    font-size: 1.8rem;
+    background: rgba(0, 255, 255, 0.1);
+    border-radius: 50%;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #00ffff;
+    transition: all 0.3s ease;
+}
+
+.popup-cyber .popup-close:hover {
+    color: #ff0080;
+    text-shadow: 0 0 10px #ff0080;
+    border-color: #ff0080;
+    transform: scale(1.1);
 }
 
 /* Overlay */
@@ -169,4 +449,62 @@ h1 {
 @keyframes slideIn {
     from { transform: translateX(100%); }
     to { transform: translateX(0); }
+}
+
+@keyframes royalEntrance {
+    0% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) scale(0.8);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+@keyframes royalShine {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+@keyframes neonFlicker {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.9; }
+}
+
+@keyframes neonScan {
+    0% { left: -100%; }
+    100% { left: 100%; }
+}
+
+@keyframes glassFloat {
+    0% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) translateY(20px);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) translateY(0);
+    }
+}
+
+@keyframes glassShine {
+    0% { transform: translateX(-100%) rotate(30deg); }
+    100% { transform: translateX(100%) rotate(30deg); }
+}
+
+@keyframes cyberEntrance {
+    0% { 
+        opacity: 0; 
+        transform: translate(-50%, -50%) scale(0.9) rotateY(20deg);
+    }
+    100% { 
+        opacity: 1; 
+        transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+    }
+}
+
+@keyframes cyberGrid {
+    0% { background-position: 0 0; }
+    100% { background-position: 20px 20px; }
 }

@@ -14,7 +14,7 @@ function createPopup(type) {
     removeExistingPopups();
     
     // Create overlay for modal types
-    if (type === 'center' || type === 'slide') {
+    if (['center', 'slide', 'royal', 'neon', 'glass', 'cyber'].includes(type)) {
         const overlay = document.createElement('div');
         overlay.className = 'overlay';
         overlay.addEventListener('click', function() {
@@ -53,6 +53,18 @@ function createPopup(type) {
             content = document.createTextNode('This is a notification toast. It will auto-close after 3 seconds.');
             // Auto-close notification after 3 seconds
             setTimeout(removeExistingPopups, 3000);
+            break;
+        case 'royal':
+            content = document.createTextNode('Royal Modal - Fit for a king!');
+            break;
+        case 'neon':
+            content = document.createTextNode('NEON POPUP - FUTURISTIC DESIGN');
+            break;
+        case 'glass':
+            content = document.createTextNode('Glassmorphism - Modern translucent design');
+            break;
+        case 'cyber':
+            content = document.createTextNode('CYBERPUNK 2077\nWelcome to the future');
             break;
         default:
             content = document.createTextNode('Popup content');
