@@ -3,95 +3,257 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Slider Component Showcase</title>
+  <title>Advanced Slider Component Showcase</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="showcase-container">
-    <h1>Slider Component Showcase</h1>
+    <header class="showcase-header">
+      <h1>Advanced Slider Showcase</h1>
+      <p>Explore various slider designs with smooth animations and modern UI</p>
+    </header>
     
-    <section class="slider-showcase">
-      <h2>Basic Slider</h2>
-      <div class="slider basic-slider">
-        <div class="slides">
-          <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1743376272672-c130603a3af2?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
-          </div>
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1749497683197-ae96f3cb92f4?q=80&w=1218&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
-          </div>
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1751220418652-1c10d9616227?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
-          </div>
+    <div class="slider-grid">
+      <!-- Basic Slider -->
+      <section class="slider-showcase">
+        <div class="showcase-header-section">
+          <h2><i class="fas fa-play-circle"></i> Basic Slider</h2>
+          <span class="badge">Classic</span>
         </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </section>
-
-    <section class="slider-showcase">
-      <h2>Fade Transition Slider</h2>
-      <div class="slider fade-slider">
-        <div class="slides">
-          <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1743376272672-c130603a3af2?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
-          </div>
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1749497683197-ae96f3cb92f4?q=80&w=1218&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
-          </div>
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1751220418652-1c10d9616227?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
-          </div>
-        </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-        <div class="dots"></div>
-      </div>
-    </section>
-
-    <section class="slider-showcase">
-      <h2>Slide Transition Slider</h2>
-      <div class="slider slide-transition-slider">
-        <div class="slides-container">
+        <div class="slider basic-slider">
           <div class="slides">
-            <div class="slide">
-              <img src="https://images.unsplash.com/photo-1743376272672-c130603a3af2?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+            <div class="slide active">
+              <img src="https://picsum.photos/800/400?random=1" alt="Nature Scene 1" loading="lazy">
+              <div class="slide-content">
+                <h3>Beautiful Landscapes</h3>
+                <p>Discover amazing natural wonders</p>
+              </div>
             </div>
             <div class="slide">
-              <img src="https://images.unsplash.com/photo-1749497683197-ae96f3cb92f4?q=80&w=1218&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
+              <img src="https://picsum.photos/800/400?random=2" alt="Nature Scene 2" loading="lazy">
+              <div class="slide-content">
+                <h3>Urban Architecture</h3>
+                <p>Modern city life and design</p>
+              </div>
             </div>
             <div class="slide">
-              <img src="https://images.unsplash.com/photo-1751220418652-1c10d9616227?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
+              <img src="https://picsum.photos/800/400?random=3" alt="Nature Scene 3" loading="lazy">
+              <div class="slide-content">
+                <h3>Coastal Views</h3>
+                <p>Serene ocean perspectives</p>
+              </div>
             </div>
           </div>
+          <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
         </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-      </div>
-    </section>
+      </section>
 
-    <section class="slider-showcase">
-      <h2>Autoplay Slider</h2>
-      <div class="slider autoplay-slider">
-        <div class="slides">
-          <div class="slide active">
-            <img src="https://images.unsplash.com/photo-1743376272672-c130603a3af2?q=80&w=1229&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 1">
+      <!-- Fade Transition Slider -->
+      <section class="slider-showcase">
+        <div class="showcase-header-section">
+          <h2><i class="fas fa-magic"></i> Fade Transition</h2>
+          <span class="badge">Smooth</span>
+        </div>
+        <div class="slider fade-slider">
+          <div class="slides">
+            <div class="slide active">
+              <img src="https://picsum.photos/800/400?random=4" alt="Fade Scene 1" loading="lazy">
+              <div class="slide-content">
+                <h3>Mountain Peaks</h3>
+                <p>Majestic heights and views</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="https://picsum.photos/800/400?random=5" alt="Fade Scene 2" loading="lazy">
+              <div class="slide-content">
+                <h3>Forest Paths</h3>
+                <p>Peaceful woodland walks</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="https://picsum.photos/800/400?random=6" alt="Fade Scene 3" loading="lazy">
+              <div class="slide-content">
+                <h3>Desert Dunes</h3>
+                <p>Endless golden landscapes</p>
+              </div>
+            </div>
           </div>
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1749497683197-ae96f3cb92f4?q=80&w=1218&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 2">
+          <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+          <div class="dots"></div>
+        </div>
+      </section>
+
+      <!-- Slide Transition Slider -->
+      <section class="slider-showcase">
+        <div class="showcase-header-section">
+          <h2><i class="fas fa-arrows-alt-h"></i> Slide Transition</h2>
+          <span class="badge">Dynamic</span>
+        </div>
+        <div class="slider slide-transition-slider">
+          <div class="slides-container">
+            <div class="slides">
+              <div class="slide">
+                <img src="https://picsum.photos/800/400?random=7" alt="Slide Scene 1" loading="lazy">
+                <div class="slide-content">
+                  <h3>City Lights</h3>
+                  <p>Vibrant nightlife scenes</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="https://picsum.photos/800/400?random=8" alt="Slide Scene 2" loading="lazy">
+                <div class="slide-content">
+                  <h3>Rural Countryside</h3>
+                  <p>Peaceful farmland views</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="https://picsum.photos/800/400?random=9" alt="Slide Scene 3" loading="lazy">
+                <div class="slide-content">
+                  <h3>Tropical Paradise</h3>
+                  <p>Exotic island destinations</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div class="slide">
-            <img src="https://images.unsplash.com/photo-1751220418652-1c10d9616227?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image 3">
+          <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Autoplay Slider -->
+      <section class="slider-showcase">
+        <div class="showcase-header-section">
+          <h2><i class="fas fa-play"></i> Autoplay Slider</h2>
+          <span class="badge">Auto</span>
+        </div>
+        <div class="slider autoplay-slider">
+          <div class="slides">
+            <div class="slide active">
+              <img src="https://picsum.photos/800/400?random=10" alt="Auto Scene 1" loading="lazy">
+              <div class="slide-content">
+                <h3>Sunset Views</h3>
+                <p>Golden hour magic</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="https://picsum.photos/800/400?random=11" alt="Auto Scene 2" loading="lazy">
+              <div class="slide-content">
+                <h3>Winter Wonderland</h3>
+                <p>Snow-covered landscapes</p>
+              </div>
+            </div>
+            <div class="slide">
+              <img src="https://picsum.photos/800/400?random=12" alt="Auto Scene 3" loading="lazy">
+              <div class="slide-content">
+                <h3>Spring Blooms</h3>
+                <p>Fresh seasonal colors</p>
+              </div>
+            </div>
+          </div>
+          <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+          <div class="dots"></div>
+          <div class="autoplay-controls">
+            <button class="play-pause-btn">
+              <i class="fas fa-pause"></i>
+            </button>
           </div>
         </div>
-        <button class="prev">&#10094;</button>
-        <button class="next">&#10095;</button>
-        <div class="dots"></div>
-        <div class="autoplay-controls">
-          <button class="play-pause">Pause</button>
+      </section>
+
+      <!-- 3D Carousel Slider -->
+      <section class="slider-showcase">
+        <div class="showcase-header-section">
+          <h2><i class="fas fa-cube"></i> 3D Carousel</h2>
+          <span class="badge">3D</span>
         </div>
-      </div>
-    </section>
+        <div class="slider carousel-3d-slider">
+          <div class="carousel-container">
+            <div class="carousel-item active">
+              <img src="https://picsum.photos/600/400?random=13" alt="3D Scene 1" loading="lazy">
+              <div class="slide-content">
+                <h3>Space Views</h3>
+                <p>Cosmic perspectives</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/600/400?random=14" alt="3D Scene 2" loading="lazy">
+              <div class="slide-content">
+                <h3>Ocean Depths</h3>
+                <p>Underwater worlds</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/600/400?random=15" alt="3D Scene 3" loading="lazy">
+              <div class="slide-content">
+                <h3>Sky High</h3>
+                <p>Aerial adventures</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/600/400?random=16" alt="3D Scene 4" loading="lazy">
+              <div class="slide-content">
+                <h3>Wildlife</h3>
+                <p>Nature's creatures</p>
+              </div>
+            </div>
+            <div class="carousel-item">
+              <img src="https://picsum.photos/600/400?random=17" alt="3D Scene 5" loading="lazy">
+              <div class="slide-content">
+                <h3>Abstract Art</h3>
+                <p>Creative expressions</p>
+              </div>
+            </div>
+          </div>
+          <button class="nav-btn prev"><i class="fas fa-chevron-left"></i></button>
+          <button class="nav-btn next"><i class="fas fa-chevron-right"></i></button>
+        </div>
+      </section>
+
+      <!-- Vertical Slider -->
+      <section class="slider-showcase">
+        <div class="showcase-header-section">
+          <h2><i class="fas fa-arrows-alt-v"></i> Vertical Slider</h2>
+          <span class="badge">Vertical</span>
+        </div>
+        <div class="slider vertical-slider">
+          <div class="slides-container">
+            <div class="slides">
+              <div class="slide active">
+                <img src="https://picsum.photos/800/400?random=18" alt="Vertical Scene 1" loading="lazy">
+                <div class="slide-content">
+                  <h3>Tower Views</h3>
+                  <p>Reaching for the sky</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="https://picsum.photos/800/400?random=19" alt="Vertical Scene 2" loading="lazy">
+                <div class="slide-content">
+                  <h3>Waterfall Heights</h3>
+                  <p>Cascading natural beauty</p>
+                </div>
+              </div>
+              <div class="slide">
+                <img src="https://picsum.photos/800/400?random=20" alt="Vertical Scene 3" loading="lazy">
+                <div class="slide-content">
+                  <h3>Cliff Edges</h3>
+                  <p>Dramatic vertical drops</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <button class="nav-btn prev up"><i class="fas fa-chevron-up"></i></button>
+          <button class="nav-btn next down"><i class="fas fa-chevron-down"></i></button>
+          <div class="progress-bar">
+            <div class="progress-fill"></div>
+          </div>
+        </div>
+      </section>
+    </div>
   </div>
 
   <script src="script.js"></script>
