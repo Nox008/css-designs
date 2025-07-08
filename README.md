@@ -14,6 +14,7 @@ This repository currently contains a growing set of basic yet beautifully styled
 - 📝 **Login Forms** – In we Go
 - 🍿 **Popups** – Pop In fellas
 - 🛝 **Slides** – Up and Down, Left and Right!
+- 🦸 **Hero** – Hero sections
 - ...and **more coming daily**!
 
 > ⚠️ Work in Progress: This is a growing collection. New components are added regularly as part of my daily contribution habit.
