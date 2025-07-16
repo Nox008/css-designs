@@ -1,0 +1,67 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+h1{
+    display: flex;
+    justify-content:center ;
+    align-items: center;
+    margin: 20px 0;
+    font-size: 40px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.standard{
+    border: 1px solid black;
+    border-radius: 10px;
+    width: 30%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    justify-self: center;
+}
+
+.buttonA{
+    min-width: 160px;
+    min-height: 25px;
+    margin: 10px 0;
+    background-color: aqua;
+    border: none;
+    border-radius: 20px;
+    transition: background-color 0.4s ease-in;
+    cursor: pointer;
+}
+
+.buttonA:hover{
+    background-color: aquamarine;
+}
+
+.buttonB{
+    min-width: 160px;
+    min-height: 25px;
+    margin: 10px 0;
+    background-color: red;
+    color: black;
+    transition: background-color 0.4s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.buttonB:hover{
+    background-color: orange;
+}
+
+.buttonC{
+    min-width: 160px;
+    min-height: 25px;
+    margin: 10px 0;
+    background-color: blueviolet;
+    transition: background-color 0.4s cubic-bezier(0.95, 0.05, 0.795, 0.035);
+}
+
+.buttonC:hover{
+    background-color: aliceblue;
+    color: black;
+}
