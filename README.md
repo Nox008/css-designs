@@ -16,6 +16,7 @@ This repository currently contains a growing set of basic yet beautifully styled
 - 🛝 **Slides** – Up and Down, Left and Right!
 - 🦸 **Hero** – Hero sections
 - 🔃 **Loaders** – Loading....
+- 🦄 **Hover Animations** – Animated Buttons!
 - ...and **more coming daily**!
 
 > ⚠️ Work in Progress: This is a growing collection. New components are added regularly as part of my daily contribution habit.
