@@ -1,0 +1,33 @@
+body{
+    background-color: rgb(54, 47, 47);
+}
+
+.main-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 40px;
+    color: bisque;
+}
+
+.container{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid seashell;
+    padding: 20px;
+    justify-content: space-between;
+}
+
+.card{
+    border: 1px solid seashell;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: beige;
+}
+
+.sub-head{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: beige;
+}
