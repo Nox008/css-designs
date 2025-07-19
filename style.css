@@ -1,33 +1,252 @@
-body{
-    background-color: rgb(54, 47, 47);
+/* ------------------------- */
+/* --- 1. Root & Variables --- */
+/* ------------------------- */
+:root {
+    --font-main: 'Plus Jakarta Sans', sans-serif;
+    
+    --transition-fast: 0.2s ease;
+    --transition-medium: 0.4s ease;
+
+    /* Light Theme */
+    --bg-light: #f4f4f5;
+    --text-light: #18181b;
+    --card-bg-light: rgba(255, 255, 255, 0.6);
+    --card-border-light: rgba(0, 0, 0, 0.1);
+    --card-shadow-light: 0 8px 32px 0 rgba(0, 0, 0, 0.1);
+    --accent-light: #4f46e5;
+    
+    /* Dark Theme */
+    --bg-dark: #09090b;
+    --text-dark: #f4f4f5;
+    --card-bg-dark: rgba(24, 24, 27, 0.6);
+    --card-border-dark: rgba(255, 255, 255, 0.1);
+    --card-shadow-dark: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --accent-dark: #818cf8;
 }
 
-.main-head{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 40px;
-    color: bisque;
+[data-theme="light"] {
+    --bg-color: var(--bg-light);
+    --text-color: var(--text-light);
+    --card-bg: var(--card-bg-light);
+    --card-border: var(--card-border-light);
+    --card-shadow: var(--card-shadow-light);
+    --accent-color: var(--accent-light);
 }
 
-.container{
+[data-theme="dark"] {
+    --bg-color: var(--bg-dark);
+    --text-color: var(--text-dark);
+    --card-bg: var(--card-bg-dark);
+    --card-border: var(--card-border-dark);
+    --card-shadow: var(--card-shadow-dark);
+    --accent-color: var(--accent-dark);
+}
+
+/* ------------------------- */
+/* --- 2. General Styles --- */
+/* ------------------------- */
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-main);
+    transition: background-color var(--transition-fast), color var(--transition-fast);
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.page-content {
+    position: relative;
+    z-index: 2;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    animation: fadeIn 1s ease-out forwards;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* ------------------------- */
+/* --- 3. Background Blob --- */
+/* ------------------------- */
+.blob {
+    position: fixed;
+    top: 20%;
+    left: 20%;
+    width: 400px;
+    height: 400px;
+    background: linear-gradient(180deg, rgba(79, 70, 229, 0.3) 0%, rgba(129, 140, 248, 0.1) 100%);
+    border-radius: 50%;
+    filter: blur(100px);
+    z-index: 1;
+    animation: blob-animation 20s infinite alternate;
+}
+
+@keyframes blob-animation {
+    0% { transform: translate(-50%, -50%) scale(1); }
+    50% { transform: translate(50%, -10%) scale(1.2); }
+    100% { transform: translate(20%, 60%) scale(0.9); }
+}
+
+/* ------------------------- */
+/* --- 4. Header & Theme Toggle --- */
+/* ------------------------- */
+.main-header {
     display: flex;
-    flex-direction: row;
-    border: 1px solid seashell;
-    padding: 20px;
     justify-content: space-between;
-}
-
-.card{
-    border: 1px solid seashell;
-    padding: 10px;
-    border-radius: 10px;
-    background-color: beige;
-}
-
-.sub-head{
-    display: flex;
-    justify-content: center;
     align-items: center;
-    color: beige;
+    margin-bottom: 4rem;
+}
+
+.logo {
+    font-weight: 700;
+    font-size: 1.5rem;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+.theme-toggle-checkbox { display: none; }
+.theme-toggle-label {
+    display: block;
+    position: relative;
+    width: 50px;
+    height: 28px;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 99px;
+    cursor: pointer;
+    transition: var(--transition-fast);
+}
+
+.toggle-icon {
+    position: absolute;
+    top: 3px;
+    left: 4px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--accent-color);
+    border-radius: 50%;
+    transition: var(--transition-medium);
+}
+
+.theme-toggle-checkbox:checked + .theme-toggle-label .toggle-icon {
+    transform: translateX(21px);
+}
+
+/* ------------------------- */
+/* --- 5. Hero Section --- */
+/* ------------------------- */
+.hero {
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.hero-subtitle {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    color: var(--text-color);
+    opacity: 0.7;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* ------------------------- */
+/* --- 6. Card Grid & Cards --- */
+/* ------------------------- */
+.card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.card {
+    position: relative;
+    display: block;
+    padding: 2rem;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 16px;
+    box-shadow: var(--card-shadow);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    text-decoration: none;
+    color: var(--text-color);
+    transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+    overflow: hidden; /* Important for the glowing border effect */
+}
+
+/* Glowing Border Effect */
+.card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: 16px;
+    padding: 1px;
+    background: conic-gradient(from 180deg at 50% 50%, rgba(129, 140, 248, 0.8) 0deg, rgba(79, 70, 229, 0.8) 50%, rgba(129, 140, 248, 0.8) 360deg);
+    -webkit-mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    mask: 
+        linear-gradient(#fff 0 0) content-box,
+        linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.card:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: var(--card-shadow);
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.card-cta {
+    font-weight: 600;
+    color: var(--accent-color);
+    transition: transform var(--transition-fast);
+}
+
+.card:hover .card-cta {
+    transform: translateX(4px);
+}
+
+/* ------------------------- */
+/* --- 7. Footer --- */
+/* ------------------------- */
+.main-footer {
+    text-align: center;
+    margin-top: 6rem;
+    padding: 2rem 0;
+    opacity: 0.6;
 }

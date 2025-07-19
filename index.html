@@ -1,59 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CSS Design showcase</title>
+    <title>CSS Designs Showcase</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
 </head>
 <body>
-    <h1 class="main-head">CSS Designs by me</h1>
-    <div class="container">
-        <div class="card">
-            <p>Buttons</p>
-            <a href="button designs/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Button Hover Animations</p>
-            <a href="button hover animations/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Cards</p>
-            <a href="cards/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Dropdowns</p>
-            <a href="dropdowns/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Hero Sections</p>
-            <a href="hero section/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Liquid Glass</p>
-            <a href="liquid glass/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Loaders</p>
-            <a href="loaders/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Popups</p>
-            <a href="popups/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>SignUp Page</p>
-            <a href="signup/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Sliders</p>
-            <a href="Sliders/index.html" target="_blank">Go here</a>
-        </div>
-        <div class="card">
-            <p>Toasts</p>
-            <a href="toasts/index.html" target="_blank">Go here</a>
-        </div>
+    <div class="blob"></div>
+
+    <div class="page-content">
+        <header class="main-header">
+            <a class="logo" href="#">Showcase.</a>
+            <div class="theme-switcher">
+                <input type="checkbox" id="theme-toggle" class="theme-toggle-checkbox">
+                <label for="theme-toggle" class="theme-toggle-label">
+                    <span class="toggle-icon"></span>
+                </label>
+            </div>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h1 class="hero-title">A Curated Collection of Modern CSS Designs</h1>
+                <p class="hero-subtitle">Exploring the art of web aesthetics with interactive and clean components.</p>
+            </section>
+
+            <div class="card-grid">
+                <a href="/button designs/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Buttons</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/button hover animations/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Hover Animations</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/cards/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Cards</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/loaders/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Loaders</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/hero section/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Hero Sections</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/popups/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Popups & Modals</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                 <a href="/toasts/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Toasts</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                 <a href="/Sliders/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Sliders</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/signup/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Signup Pages</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/liquid glass/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Liquid Glass</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+                <a href="/dropdowns/index.html" class="card">
+                    <div class="card-content">
+                        <h3 class="card-title">Dropdown Menus</h3>
+                        <p class="card-cta">Explore →</p>
+                    </div>
+                </a>
+            </div>
+        </main>
+
+        <footer class="main-footer">
+            <p>Crafted with 💙 by Nox</p>
+        </footer>
     </div>
-    <h3 class="sub-head">More To come !!</h3>
 </body>
 </html>
