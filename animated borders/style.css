@@ -1,108 +1,173 @@
-/* Import a nice font for better presentation */
+/* Import a modern font */
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
 
-/* Basic reset and body styling */
+/* --- General Setup & Showcase Styling --- */
 body {
     font-family: 'Inter', sans-serif;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start; /* Align to top */
     min-height: 100vh;
-    background-color: #111827; /* Dark background to make the card pop */
+    background-color: #0a0a0a; /* Darker background for a premium feel */
     margin: 0;
+    padding: 3rem 1rem;
     color: #f9fafb;
+    box-sizing: border-box;
 }
 
-/* The main card container */
+.showcase-container {
+    width: 100%;
+    max-width: 1200px;
+    text-align: center;
+}
+
+.showcase-header {
+    margin-bottom: 4rem;
+}
+
+.showcase-header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(90deg, #e0e0e0, #a0a0a0);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.showcase-header p {
+    font-size: 1.125rem;
+    color: #888;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.component-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* --- Base Card Styling --- */
 .card {
-    position: relative; /* Crucial for positioning the pseudo-element */
-    width: 90%;
+    position: relative;
+    width: 100%;
     max-width: 350px;
-    background: #1f2937; /* Card background color */
-    border-radius: 1rem; /* Rounded corners */
-    padding: 2px; /* This padding creates space for the border */
-    overflow: hidden; /* Keeps the animated border contained */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 4 / 3; /* Maintain a consistent shape */
+    background: #171717;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px; /* Default padding for border space */
+}
+
+.card-content {
+    width: 100%;
+    height: 100%;
+    background: #171717; /* Matches card background */
+    border-radius: calc(1rem - 2px);
+    padding: 1.5rem;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: relative; /* Ensure content is on top */
     z-index: 1;
 }
 
-/* The animated border pseudo-element */
-.card::before {
-    content: '';
-    position: absolute;
-    top: -50%;
-    left: -50%;
-    width: 200%;
-    height: 200%;
-    z-index: -1; /* Place it behind the card's content area */
-    
-    /* The magic: a conic gradient for the multi-color effect */
-    background: conic-gradient(
-        transparent,
-        transparent,
-        #0ea5e9, /* sky-500 */
-        #6366f1, /* indigo-500 */
-        #ec4899, /* pink-500 */
-        #f97316, /* orange-500 */
-        #0ea5e9, /* sky-500 */
-        transparent,
-        transparent
-    );
-
-    /* The animation definition */
-    animation: rotate 4s linear infinite;
-}
-
-/* Pause animation on hover for a nice interactive effect */
-.card:hover::before {
-    animation-play-state: paused;
-}
-
-/* The inner content area of the card */
-.card-content {
-    background: #1f2937; /* Same as the card's background to hide the center of the gradient */
-    padding: 2rem;
-    border-radius: calc(1rem - 2px); /* Slightly smaller radius to fit inside the parent */
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
 .card-content h2 {
-    margin: 0;
-    font-size: 1.75rem;
-    font-weight: 700;
-    color: #ffffff;
+    margin: 0 0 0.5rem 0;
+    font-size: 1.5rem;
+    color: #f5f5f5;
 }
 
 .card-content p {
     margin: 0;
     line-height: 1.6;
-    color: #d1d5db; /* Lighter gray for text */
+    color: #a3a3a3;
+    font-size: 0.95rem;
 }
 
-.card-button {
-    display: inline-block;
-    padding: 0.75rem 1.5rem;
-    background-color: #374151;
-    color: #f9fafb;
-    text-decoration: none;
-    border-radius: 0.5rem;
-    font-weight: 500;
-    text-align: center;
-    transition: background-color 0.3s ease;
-}
+/* --- Animations --- */
 
-.card-button:hover {
-    background-color: #4b5563;
-}
-
-/* The keyframes for the rotation animation */
+/* Keyframes used by multiple animations */
 @keyframes rotate {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+/* 1: Rotating Gradient Border */
+.card-1::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(from 180deg at 50% 50%, #eab308, #db2777, #6d28d9, #2563eb, #0ea5e9, #eab308);
+    animation: rotate 4s linear infinite;
+}
+
+/* 2: Spotlight Scan Border (FIXED) */
+.card-2::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: -50%; left: -50%;
+    width: 200%; height: 200%;
+    background: conic-gradient(
+        from 90deg at 50% 50%,
+        transparent 0%,
+        transparent 85%,
+        #0ea5e9 98%,
+        white 100%
+    );
+    animation: rotate 4s linear infinite;
+}
+
+/* 3: Pulsing Glow Border */
+.card-3 {
+    padding: 0; /* Override base padding */
+    animation: pulse-glow 3s ease-in-out infinite;
+}
+.card-3 .card-content {
+    border-radius: 1rem; /* Match parent radius */
+}
+@keyframes pulse-glow {
+    0%, 100% { box-shadow: 0 0 20px 5px rgba(219, 39, 119, 0.4); }
+    50% { box-shadow: 0 0 40px 15px rgba(219, 39, 119, 0.6); }
+}
+
+/* 4: Marching Ants Border */
+.card-4::before {
+    content: '';
+    position: absolute;
+    z-index: 0;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background-image: repeating-linear-gradient(
+        -45deg, #f59e0b, #f59e0b 10px,
+        transparent 10px, transparent 20px
+    );
+    background-size: 200% 200%;
+    animation: marching-ants 12s linear infinite;
+}
+@keyframes marching-ants {
+    to { background-position: 100% 100%; }
+}
+
+/* 5: Border Draw on Hover (REVERTED) */
+.card-5 {
+    padding: 0;
+}
+.card-5 .card-content {
+    border-radius: 1rem;
+    border: 2px solid transparent; /* Prepare for a simple border fade */
+    transition: border-color 0.4s ease-in-out;
+}
+.card-5:hover .card-content {
+    border-color: #10b981; /* On hover, fade in the border color */
 }

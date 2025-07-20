@@ -17,6 +17,7 @@ This repository currently contains a growing set of basic yet beautifully styled
 - 🦸 **Hero** – Hero sections
 - 🔃 **Loaders** – Loading....
 - 🦄 **Hover Animations** – Animated Buttons!
+- 😶‍🌫️ **Border Animation** – Animated Borders!
 - ...and **more coming daily**!
 
 > ⚠️ Work in Progress: This is a growing collection. New components are added regularly as part of my daily contribution habit.
