@@ -1,0 +1,108 @@
+/* Import a nice font for better presentation */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap');
+
+/* Basic reset and body styling */
+body {
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #111827; /* Dark background to make the card pop */
+    margin: 0;
+    color: #f9fafb;
+}
+
+/* The main card container */
+.card {
+    position: relative; /* Crucial for positioning the pseudo-element */
+    width: 90%;
+    max-width: 350px;
+    background: #1f2937; /* Card background color */
+    border-radius: 1rem; /* Rounded corners */
+    padding: 2px; /* This padding creates space for the border */
+    overflow: hidden; /* Keeps the animated border contained */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+/* The animated border pseudo-element */
+.card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    z-index: -1; /* Place it behind the card's content area */
+    
+    /* The magic: a conic gradient for the multi-color effect */
+    background: conic-gradient(
+        transparent,
+        transparent,
+        #0ea5e9, /* sky-500 */
+        #6366f1, /* indigo-500 */
+        #ec4899, /* pink-500 */
+        #f97316, /* orange-500 */
+        #0ea5e9, /* sky-500 */
+        transparent,
+        transparent
+    );
+
+    /* The animation definition */
+    animation: rotate 4s linear infinite;
+}
+
+/* Pause animation on hover for a nice interactive effect */
+.card:hover::before {
+    animation-play-state: paused;
+}
+
+/* The inner content area of the card */
+.card-content {
+    background: #1f2937; /* Same as the card's background to hide the center of the gradient */
+    padding: 2rem;
+    border-radius: calc(1rem - 2px); /* Slightly smaller radius to fit inside the parent */
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.card-content h2 {
+    margin: 0;
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: #ffffff;
+}
+
+.card-content p {
+    margin: 0;
+    line-height: 1.6;
+    color: #d1d5db; /* Lighter gray for text */
+}
+
+.card-button {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: #374151;
+    color: #f9fafb;
+    text-decoration: none;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    text-align: center;
+    transition: background-color 0.3s ease;
+}
+
+.card-button:hover {
+    background-color: #4b5563;
+}
+
+/* The keyframes for the rotation animation */
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
