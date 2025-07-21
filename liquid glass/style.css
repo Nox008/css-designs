@@ -1,134 +1,285 @@
-        /* Basic Setup & Animated Gradient Background */
-        body {
-            margin: 0;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-            min-height: 100vh;
-            display: grid;
-            place-items: center;
-            background: url(https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/flowers.jpg) center center;
-            animation: gradientAnimation 15s ease infinite;
-        }
+/* Basic Setup & Animated Gradient Background */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
-        @keyframes gradientAnimation {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
-        }
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    background: url(https://raw.githubusercontent.com/lucasromerodb/liquid-glass-effect-macos/refs/heads/main/assets/flowers.jpg) center center;
+    /* background-size: cover; */
+    animation: gradientAnimation 15s ease infinite;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
 
-        /* The Glass Card */
-        .glass-card {
-            width: 320px;
-            padding: 40px;
-            text-align: center;
-            color: white;
-            
-            /* --- The Magic Happens Here --- */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
 
-            /* 1. Translucent Background with a subtle gradient for gloss */
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            
-            /* 2. The blur effect on the background */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
+/* Base Glass Card Styles */
+.glass-card {
+    /* --- The Magic Happens Here --- */
+    /* 1. Translucent Background with a subtle gradient for gloss */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    
+    /* 2. The blur effect on the background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
 
-            /* 3. Soft rounded corners */
-            border-radius: 20px;
+    /* 3. Soft rounded corners */
+    border-radius: 20px;
 
-            /* 4. A subtle white border to catch the light */
-            border: 1px solid rgba(255, 255, 255, 0.18);
+    /* 4. A subtle white border to catch the light */
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
-            /* 5. A soft shadow to lift the card off the page */
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
+    /* 5. A soft shadow to lift the card off the page */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
-        /* Styling for the content inside the card */
-        .glass-card h2 {
-            font-size: 2rem;
-            margin-top: 0;
-            text-shadow: 0 1px 3px rgba(0,0,0,0.2);
-        }
+    /* Base styling */
+    color: white;
+    padding: 2rem;
+    margin: 1rem;
+    transition: all 0.3s ease;
+}
 
-        .glass-card p {
-            font-size: 1rem;
-            line-height: 1.5;
-            opacity: 0.8;
-        }
+.glass-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 40px 0 rgba(0, 0, 0, 0.5);
+}
 
-         /* The Glass Card */
-        .glass-button-1 {
-            width: 120px;
-            padding: 10px;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            
-            /* --- The Magic Happens Here --- */
+/* Layout Structure */
+.showcase-header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 40vh;
+    padding: 2rem 1rem;
+}
 
-            /* 1. Translucent Background with a subtle gradient for gloss */
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            
-            /* 2. The blur effect on the background */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
+.showcase-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem 1rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
 
-            /* 3. Soft rounded corners */
-            border-radius: 40px;
+.showcase-footer {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+    margin-top: 4rem;
+}
 
-            /* 4. A subtle white border to catch the light */
-            border: 1px solid rgba(255, 255, 255, 0.18);
+/* Header Styles */
+.header-card {
+    text-align: center;
+    max-width: 600px;
+}
 
-            /* 5. A soft shadow to lift the card off the page */
-            box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.37);
-        }
+.header-card h1 {
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    font-weight: 700;
+    margin-bottom: 1rem;
+    text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    background: linear-gradient(135deg, #fff, #e0e7ff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
 
-        .glass-button-2 {
-            width: 55px;
-            padding: 10px;
-            text-align: center;
-            color: white;
-            cursor: pointer;
-            
-            /* --- The Magic Happens Here --- */
+.header-card p {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    opacity: 0.9;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
 
-            /* 1. Translucent Background with a subtle gradient for gloss */
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            
-            /* 2. The blur effect on the background */
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
+/* Main Glass Card (Original Design) */
+.showcase-main .glass-card {
+    width: 320px;
+    padding: 40px;
+    text-align: center;
+    color: white;
+    
+    /* --- The Magic Happens Here --- */
+    /* 1. Translucent Background with a subtle gradient for gloss */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    
+    /* 2. The blur effect on the background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
 
-            /* 3. Soft rounded corners */
-            border-radius: 40px;
+    /* 3. Soft rounded corners */
+    border-radius: 20px;
 
-            /* 4. A subtle white border to catch the light */
-            border: 1px solid rgba(255, 255, 255, 0.18);
+    /* 4. A subtle white border to catch the light */
+    border: 1px solid rgba(255, 255, 255, 0.18);
 
-            /* 5. A soft shadow to lift the card off the page */
-            box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.37);
-        }
+    /* 5. A soft shadow to lift the card off the page */
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
 
-        .button-container{
-            display: flex;
-            flex-direction: row;
-            justify-content: space-evenly;
-            width: 300px;
-            padding: 30px;
+    margin: 1rem;
+}
 
-            /* --- The Magic Happens Here --- */
+/* Styling for the content inside the card */
+.showcase-main .glass-card h2 {
+    font-size: 2rem;
+    margin-top: 0;
+    text-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
 
-            /* 1. Translucent Background with a subtle gradient for gloss */
-            background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
-            
-            /* 2. The blur effect on the background */
-            backdrop-filter: blur(5px);
-            -webkit-backdrop-filter: blur(10px); /* For Safari */
+.showcase-main .glass-card p {
+    font-size: 1rem;
+    line-height: 1.5;
+    opacity: 0.8;
+}
 
-            /* 3. Soft rounded corners */
-            border-radius: 20px;
+/* Original Button Styles */
+.glass-button-1 {
+    width: 120px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    
+    /* --- The Magic Happens Here --- */
+    /* 1. Translucent Background with a subtle gradient for gloss */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    
+    /* 2. The blur effect on the background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
 
-            /* 4. A subtle white border to catch the light */
-            border: 1px solid rgba(255, 255, 255, 0.18);
+    /* 3. Soft rounded corners */
+    border-radius: 40px;
 
-            /* 5. A soft shadow to lift the card off the page */
-            box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.37);
-        }
+    /* 4. A subtle white border to catch the light */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    /* 5. A soft shadow to lift the card off the page */
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.37);
+}
+
+.glass-button-2 {
+    width: 55px;
+    padding: 10px;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+    
+    /* --- The Magic Happens Here --- */
+    /* 1. Translucent Background with a subtle gradient for gloss */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    
+    /* 2. The blur effect on the background */
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+
+    /* 3. Soft rounded corners */
+    border-radius: 40px;
+
+    /* 4. A subtle white border to catch the light */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    /* 5. A soft shadow to lift the card off the page */
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Button Container (Original Design) */
+.button-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 300px;
+    padding: 30px;
+
+    /* --- The Magic Happens Here --- */
+    /* 1. Translucent Background with a subtle gradient for gloss */
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0));
+    
+    /* 2. The blur effect on the background */
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(10px); /* For Safari */
+
+    /* 3. Soft rounded corners */
+    border-radius: 20px;
+
+    /* 4. A subtle white border to catch the light */
+    border: 1px solid rgba(255, 255, 255, 0.18);
+
+    /* 5. A soft shadow to lift the card off the page */
+    box-shadow: 0 8px 40px 0 rgba(0, 0, 0, 0.37);
+}
+
+/* Footer */
+.footer-card {
+    text-align: center;
+    max-width: 600px;
+    padding: 1.5rem 2rem;
+}
+
+.footer-card p {
+    opacity: 0.8;
+    font-size: 0.9rem;
+    color: black;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .showcase-main {
+        padding: 1rem;
+        gap: 1.5rem;
+    }
+    
+    .showcase-main .glass-card {
+        width: 90%;
+        max-width: 320px;
+        margin: 0.5rem;
+        padding: 30px;
+    }
+    
+    .button-container {
+        width: 90%;
+        max-width: 300px;
+        flex-direction: column;
+        gap: 1rem;
+        padding: 20px;
+    }
+    
+    .glass-button-1, .glass-button-2 {
+        width: 100%;
+        max-width: 200px;
+    }
+}
+
+@media (max-width: 480px) {
+    .showcase-header {
+        min-height: 35vh;
+        padding: 1rem;
+    }
+    
+    .showcase-main .glass-card {
+        width: 95%;
+        padding: 25px;
+    }
+    
+    .showcase-main .glass-card h2 {
+        font-size: 1.5rem;
+    }
+    
+    .showcase-main .glass-card p {
+        font-size: 0.9rem;
+    }
+    
+    .button-container {
+        width: 95%;
+        padding: 15px;
+    }
+}
