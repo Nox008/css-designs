@@ -219,7 +219,7 @@ h1 {
 
 .dropdown-menu {
     position: absolute;
-    top: 100%;
+    top: 150%;
     left: 0;
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
@@ -264,7 +264,7 @@ h1 {
 
 .mega-menu {
     position: absolute;
-    top: 100%;
+    top: 150%;
     right: 0;
     background-color: var(--card-bg-color);
     border: 1px solid var(--border-color);
