@@ -3,22 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Glassmorphism Navbar</title>
+    <title>Premium Navbar Components</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar glass-nav">
-        <div class="navbar-container">
-            <a href="#" class="logo">Brand</a>
-            <div class="nav-links">
-                <a href="#" class="nav-link active">Home</a>
-                <a href="#" class="nav-link">Features</a>
-                <a href="#" class="nav-link">Pricing</a>
-                <a href="#" class="nav-link">About</a>
-                <a href="#" class="nav-link">Contact</a>
+    <div class="showcase-container">
+        <div class="header">
+            <h1>Premium Navbar Components</h1>
+            <p class="subtitle">Modern, responsive navigation bars with enhanced features and micro-interactions</p>
+            <div class="theme-toggle">
+                <button id="theme-switcher" aria-label="Toggle dark mode">
+                    <i class="fas fa-moon"></i>
+                </button>
             </div>
-            <button class="nav-btn">Get Started</button>
         </div>
-    </nav>
+
+        <div class="component-display">
+            <div class="component-header">
+                <h2>Default with Dropdown</h2>
+                <div class="component-actions">
+                    <button class="copy-btn" data-target="default-nav">Copy Code</button>
+                </div>
+            </div>
+            <div class="component-preview">
+                <nav class="navbar navbar-default">
+                    <div class="nav-left">
+                        <a href="#" class="logo">
+                            <span class="logo-icon">▲</span>
+                            <span class="logo-text">Acme</span>
+                        </a>
+                        <ul class="nav-links">
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle">Products <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a href="#">Analytics</a>
+                                    <a href="#">Deployments</a>
+                                    <a href="#">Monitoring</a>
+                                    <a href="#">Storage</a>
+                                </div>
+                            </li>
+                            <li><a href="#">Solutions</a></li>
+                            <li><a href="#">Pricing</a></li>
+                            <li class="dropdown">
+                                <a href="#" class="dropdown-toggle">Resources <i class="fas fa-chevron-down"></i></a>
+                                <div class="dropdown-menu">
+                                    <a href="#">Documentation</a>
+                                    <a href="#">Tutorials</a>
+                                    <a href="#">Blog</a>
+                                    <a href="#">Support</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="nav-right">
+                        <button class="action-button">
+                            <i class="fas fa-rocket"></i>
+                            <span>Deploy</span>
+                        </button>
+                        <div class="user-menu">
+                            <button class="user-avatar">
+                                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="User avatar">
+                            </button>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+
+        <div class="component-display">
+            <div class="component-header">
+                <h2>Centered with Mega Menu</h2>
+                <div class="component-actions">
+                    <button class="copy-btn" data-target="centered-nav">Copy Code</button>
+                </div>
+            </div>
+            <div class="component-preview">
+                <nav class="navbar navbar-centered">
+                    <ul class="nav-links left">
+                        <li><a href="#">Features</a></li>
+                        <li><a href="#">Integrations</a></li>
+                    </ul>
+                    <a href="#" class="logo">
+                        <span class="logo-icon">▲</span>
+                        <span class="logo-text">Vercel</span>
+                    </a>
+                    <ul class="nav-links right">
+                        <li class="mega-menu-trigger">
+                            <a href="#" class="dropdown-toggle">Solutions <i class="fas fa-chevron-down"></i></a>
+                            <div class="mega-menu">
+                                <div class="mega-menu-column">
+                                    <h4>Developers</h4>
+                                    <a href="#">Next.js</a>
+                                    <a href="#">Edge Functions</a>
+                                    <a href="#">Storage</a>
+                                    <a href="#">CLI</a>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4>Enterprises</h4>
+                                    <a href="#">Scale</a>
+                                    <a href="#">Security</a>
+                                    <a href="#">Compliance</a>
+                                    <a href="#">Support</a>
+                                </div>
+                                <div class="mega-menu-column">
+                                    <h4>Resources</h4>
+                                    <a href="#">Documentation</a>
+                                    <a href="#">Tutorials</a>
+                                    <a href="#">Guides</a>
+                                    <a href="#">Blog</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li><a href="#">Pricing</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <div class="component-display">
+            <div class="component-header">
+                <h2>Search with Command Menu</h2>
+                <div class="component-actions">
+                    <button class="copy-btn" data-target="search-nav">Copy Code</button>
+                </div>
+            </div>
+            <div class="component-preview">
+                <nav class="navbar navbar-search">
+                    <div class="nav-left">
+                        <a href="#" class="logo">
+                            <span class="logo-icon">▲</span>
+                            <span class="logo-text">Studio</span>
+                        </a>
+                        <ul class="nav-links">
+                            <li><a href="#">Showcase</a></li>
+                            <li><a href="#">Templates</a></li>
+                            <li><a href="#">Enterprise</a></li>
+                        </ul>
+                    </div>
+                    <div class="nav-right">
+                        <button class="search-button" id="command-menu-btn">
+                            <div class="search-box">
+                                <span class="search-icon"><i class="fas fa-search"></i></span>
+                                <span class="search-text">Search...</span>
+                                <kbd class="shortcut">⌘K</kbd>
+                            </div>
+                        </button>
+                        <div class="action-buttons">
+                            <button class="icon-button" aria-label="Notifications">
+                                <i class="fas fa-bell"></i>
+                            </button>
+                            <button class="icon-button" aria-label="Messages">
+                                <i class="fas fa-envelope"></i>
+                            </button>
+                            <a href="#" class="cta-link">Contact Sales</a>
+                        </div>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <!-- Command Menu Modal -->
+    <div class="command-menu" id="command-menu">
+        <div class="command-menu-content">
+            <div class="search-input-container">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search commands or docs..." autofocus>
+                <kbd class="shortcut">ESC</kbd>
+            </div>
+            <div class="command-menu-sections">
+                <div class="command-section">
+                    <h5>Projects</h5>
+                    <div class="command-item">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <span>Acme Website</span>
+                            <small>Production</small>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <i class="fas fa-box"></i>
+                        <div>
+                            <span>Marketing Portal</span>
+                            <small>Staging</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="command-section">
+                    <h5>Actions</h5>
+                    <div class="command-item">
+                        <i class="fas fa-plus"></i>
+                        <div>
+                            <span>Create new project</span>
+                        </div>
+                    </div>
+                    <div class="command-item">
+                        <i class="fas fa-user-plus"></i>
+                        <div>
+                            <span>Invite team member</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
