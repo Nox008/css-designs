@@ -3,127 +3,138 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Footer Design Showcase</title>
+    <title>Footer Design Components with Dark Mode</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <main>
-        <h1>Footer Design Showcase</h1>
-        
+
+    <div class="theme-switcher">
+        <label for="theme-toggle" class="theme-toggle-label">
+            <input type="checkbox" id="theme-toggle">
+            <span class="slider"></span>
+        </label>
+    </div>
+
+    <main class="container">
+        <h1>Modern Footer Designs</h1>
+        <p>A showcase of three distinct, responsive, and modern footer components built with HTML and CSS only.</p>
+
         <section class="footer-showcase">
             <h2>Footer Design 1 – Vercel Inspired</h2>
-            <footer class="footer-vercel">
-                <div class="footer-grid">
-                    <div class="footer-logo">
-                        <svg width="100" height="20" viewBox="0 0 283 64" fill="none"><path d="M141.04 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.46 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM248.72 16c-11.04 0-19 7.2-19 18s8.96 18 20 18c6.67 0 12.55-2.64 16.19-7.09l-7.65-4.42c-2.02 2.21-5.09 3.5-8.54 3.5-4.79 0-8.86-2.5-10.37-6.5h28.02c.22-1.12.35-2.28.35-3.5 0-10.79-7.96-17.99-19-17.99zm-9.45 14.5c1.25-3.99 4.67-6.5 9.45-6.5 4.79 0 8.21 2.51 9.45 6.5h-18.9zM200.24 34c0 6 3.92 10 10 10 4.12 0 7.21-1.87 8.8-4.92l7.68 4.43c-3.18 5.3-9.14 8.49-16.48 8.49-11.05 0-19-7.2-19-18s7.96-18 19-18c7.34 0 13.29 3.19 16.48 8.49l-7.68 4.43c-1.59-3.05-4.68-4.92-8.8-4.92-6.07 0-10 4-10 10zm82.48-29v46h-9V5h9zM36.95 0L73.9 64H0L36.95 0zm92.38 5l-27.71 48L73.91 5H84.3l17.32 30 17.32-30h10.39zm58.91 12v9.69c-1-.29-2.06-.49-3.2-.49-5.81 0-10 4-10 10V51h-9V17h9v9.2c0-5.08 5.91-9.2 13.2-9.2z" fill="#fff"></path></svg>
+            <footer class="footer-1">
+                <div class="footer-1-container">
+                    <div class="footer-1-top">
+                        <a href="#" class="footer-logo">▲ LOGO</a>
+                        <p class="footer-status">All systems normal.</p>
                     </div>
-                    <nav class="footer-links">
-                        <div class="link-column">
-                            <h3>Product</h3>
-                            <a href="#">Features</a>
-                            <a href="#">Integrations</a>
-                            <a href="#">Pricing</a>
-                            <a href="#">Changelog</a>
+                    <div class="footer-1-grid">
+                        <div class="footer-column">
+                            <h3>Frameworks</h3>
+                            <ul>
+                                <li><a href="#">Next.js</a></li>
+                                <li><a href="#">Create React App</a></li>
+                                <li><a href="#">Gatsby</a></li>
+                                <li><a href="#">Nuxt.js</a></li>
+                                <li><a href="#">Vue</a></li>
+                                <li><a href="#">SvelteKit</a></li>
+                            </ul>
                         </div>
-                        <div class="link-column">
-                            <h3>Company</h3>
-                            <a href="#">About</a>
-                            <a href="#">Blog</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Customers</a>
-                        </div>
-                        <div class="link-column">
+                        <div class="footer-column">
                             <h3>Resources</h3>
-                            <a href="#">Community</a>
-                            <a href="#">Contact</a>
-                            <a href="#">Documentation</a>
-                            <a href="#">Status</a>
+                            <ul>
+                                <li><a href="#">Documentation</a></li>
+                                <li><a href="#">Experts</a></li>
+                                <li><a href="#">Customers</a></li>
+                                <li><a href="#">Guides</a></li>
+                                <li><a href="#">Support</a></li>
+                                <li><a href="#">API Reference</a></li>
+                            </ul>
                         </div>
-                    </nav>
-                </div>
-                <div class="footer-bottom">
-                    <p>© 2023 Company Name. All rights reserved.</p>
-                    <div class="legal-links">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Service</a>
-                        <a href="#">Cookie Preferences</a>
+                        <div class="footer-column">
+                            <h3>Company</h3>
+                            <ul>
+                                <li><a href="#">Home</a></li>
+                                <li><a href="#">Blog</a></li>
+                                <li><a href="#">About Us</a></li>
+                                <li><a href="#">Careers</a></li>
+                                <li><a href="#">Partners</a></li>
+                                <li><a href="#">Contact Us</a></li>
+                            </ul>
+                        </div>
+                        <div class="footer-column">
+                            <h3>Legal</h3>
+                            <ul>
+                                <li><a href="#">Privacy Policy</a></li>
+                                <li><a href="#">Terms of Service</a></li>
+                                <li><a href="#">Trademark Policy</a></li>
+                                <li><a href="#">Security</a></li>
+                                <li><a href="#">DPA</a></li>
+                                <li><a href="#">SLA</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer-1-bottom">
+                        <p>&copy; 2025 Your Company, Inc.</p>
+                        <div class="footer-socials">
+                            <a href="#">GH</a>
+                            <a href="#">TW</a>
+                        </div>
                     </div>
                 </div>
             </footer>
         </section>
 
         <section class="footer-showcase">
-            <h2>Footer Design 2 – Glassmorphic Style</h2>
-            <footer class="footer-glass">
-                <div class="glass-content">
-                    <div class="glass-logo">
-                        <span>LOGO</span>
-                    </div>
-                    <div class="glass-social">
-                        <a href="#" aria-label="Twitter"><span>🐦</span></a>
-                        <a href="#" aria-label="Instagram"><span>📷</span></a>
-                        <a href="#" aria-label="Facebook"><span>👍</span></a>
-                        <a href="#" aria-label="LinkedIn"><span>💼</span></a>
-                    </div>
-                    <div class="glass-links">
-                        <a href="#">Home</a>
+            <h2>Footer Design 2 – Colorful Gradient</h2>
+            <footer class="footer-2">
+                <div class="footer-2-container">
+                    <h3>Join Our Community</h3>
+                    <p>Get the latest news, updates, and special offers delivered directly to your inbox.</p>
+                    <form class="subscribe-form">
+                        <input type="email" placeholder="Enter your email" required>
+                        <button type="submit">Subscribe</button>
+                    </form>
+                    <div class="footer-2-links">
                         <a href="#">About</a>
                         <a href="#">Services</a>
+                        <a href="#">Portfolio</a>
                         <a href="#">Contact</a>
                     </div>
-                </div>
-                <div class="glass-credits">
-                    <p>Made with ❤️ by Creative Team</p>
-                    <p>© 2023 All rights reserved</p>
+                    <p class="copyright">&copy; 2025 Creative Co. All Rights Reserved.</p>
                 </div>
             </footer>
         </section>
 
         <section class="footer-showcase">
-            <h2>Footer Design 3 – Retro Style</h2>
-            <footer class="footer-retro">
-                <div class="retro-content">
-                    <div class="retro-logo">
-                        <span>RETRO<span class="logo-accent">CO</span></span>
+            <h2>Footer Design 3 – Glassmorphism</h2>
+            <footer class="footer-3">
+                <div class="footer-3-container">
+                    <div class="footer-3-left">
+                        <h4>GlassyFooter™</h4>
+                        <p>Navigating the future, clearly.</p>
                     </div>
-                    <div class="retro-newsletter">
-                        <h3>Join our newsletter</h3>
-                        <form class="retro-form">
-                            <input type="email" placeholder="Your email address" required>
-                            <button type="submit">Subscribe</button>
-                        </form>
-                    </div>
-                    <div class="retro-links">
-                        <div class="retro-link-col">
-                            <h4>Shop</h4>
-                            <a href="#">New Arrivals</a>
-                            <a href="#">Best Sellers</a>
-                            <a href="#">Sale Items</a>
+                    <div class="footer-3-right">
+                        <div class="footer-3-col">
+                            <h5>Product</h5>
+                            <a href="#">Features</a>
+                            <a href="#">Pricing</a>
+                            <a href="#">Demo</a>
                         </div>
-                        <div class="retro-link-col">
-                            <h4>Help</h4>
-                            <a href="#">FAQs</a>
-                            <a href="#">Shipping</a>
-                            <a href="#">Returns</a>
+                        <div class="footer-3-col">
+                            <h5>Social</h5>
+                            <a href="#">LinkedIn</a>
+                            <a href="#">Instagram</a>
+                            <a href="#">Dribbble</a>
                         </div>
-                        <div class="retro-link-col">
-                            <h4>About</h4>
-                            <a href="#">Our Story</a>
-                            <a href="#">Careers</a>
-                            <a href="#">Contact</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="retro-bottom">
-                    <p>© 2023 Retro Co. All Rights Reserved.</p>
-                    <div class="retro-legal">
-                        <a href="#">Privacy Policy</a>
-                        <a href="#">Terms of Use</a>
                     </div>
                 </div>
             </footer>
         </section>
+
     </main>
+    <script src="script.js"></script>
 </body>
 </html>
