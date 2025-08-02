@@ -1,0 +1,134 @@
+/* General body styling for centering the card */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #121212;
+    min-height: 100vh;
+    display: grid;
+    place-items: center;
+}
+
+/* The container that sets up the 3D space */
+.card-container {
+    perspective: 1500px;
+}
+
+/* The main card element */
+.card {
+    position: relative;
+    width: 320px;
+    height: 450px;
+    background: rgba(35, 35, 35, 0.4);
+    /* EDIT: Added a subtle dot pattern using an encoded SVG */
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 20 20' width='20' height='20'%3e%3ccircle fill='rgba(255,255,255,0.1)' cx='10' cy='10' r='1'/%3e%3c/svg%3e");
+    border-radius: 20px;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 25px 45px rgba(0, 0, 0, 0.2);
+    transition: transform 0.1s ease;
+    transform-style: preserve-3d;
+}
+
+/* Glare effect using a pseudo-element */
+.card::before {
+    content: '';
+    position: absolute;
+    top: var(--y, 50%);
+    left: var(--x, 50%);
+    transform: translate(-50%, -50%);
+    width: 300px;
+    height: 300px;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.5s;
+    /* EDIT: Added border-radius to make the glare a perfect circle */
+    border-radius: 50%; 
+}
+
+.card:hover::before {
+    opacity: 1;
+}
+
+/* Content wrapper */
+.card-content {
+    position: absolute;
+    inset: 0;
+    transform: translateZ(50px);
+    text-align: center;
+    padding: 20px;
+}
+
+/* Card image styling */
+.card-image {
+    position: absolute;
+    top: 20px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(100px);
+    width: 280px;
+    height: 200px;
+    transition: transform 0.5s;
+}
+
+.card-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+/* Card title styling */
+.card-title {
+    position: absolute;
+    bottom: 130px;
+    width: 100%;
+    left: 0;
+    color: #fff;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    font-size: 2.2em;
+    transform: translateZ(75px);
+    transition: transform 0.5s;
+}
+
+/* Card text styling */
+.card-text {
+    position: absolute;
+    bottom: 70px;
+    width: 100%;
+    left: 0;
+    padding: 0 20px;
+    box-sizing: border-box;
+    color: #ddd;
+    font-size: 0.9em;
+    transform: translateZ(60px);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Card button styling */
+.card-button {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateZ(80px);
+    background: #4a934a; /* Changed color to match the forest theme */
+    color: #fff;
+    padding: 10px 25px;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transition: opacity 0.5s, transform 0.5s;
+}
+
+/* Hover-in animations for the text and button */
+.card:hover .card-text,
+.card:hover .card-button {
+    opacity: 1;
+    transform: translateZ(60px);
+}
+
+.card:hover .card-button {
+    transform: translateX(-50%) translateZ(80px);
+}
