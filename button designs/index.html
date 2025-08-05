@@ -4,540 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Button Design Collection</title>
-    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;500&display=swap" rel="stylesheet">
-    <style>
-        /* Reset and Base Styles */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-        
-        body {
-            background-color: #f5f5f5;
-            color: #333;
-            line-height: 1.6;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        
-        h1 {
-            text-align: center;
-            margin-bottom: 40px;
-            color: #2c3e50;
-        }
-        
-        .button-section {
-            margin-bottom: 40px;
-            padding: 20px;
-            background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        h2 {
-            margin-bottom: 20px;
-            color: #3498db;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 10px;
-        }
-        
-        .button-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-            gap: 20px;
-        }
-        
-        /* Base Button Styles */
-        .btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border: none;
-            border-radius: 4px;
-            font-size: 16px;
-            font-weight: 600;
-            text-align: center;
-            text-decoration: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-        
-        /* Solid Buttons */
-        .btn-solid-primary {
-            background-color: #3498db;
-            color: white;
-        }
-        
-        .btn-solid-primary:hover {
-            background-color: #2980b9;
-        }
-        
-        .btn-solid-success {
-            background-color: #2ecc71;
-            color: white;
-        }
-        
-        .btn-solid-success:hover {
-            background-color: #27ae60;
-        }
-        
-        .btn-solid-danger {
-            background-color: #e74c3c;
-            color: white;
-        }
-        
-        .btn-solid-danger:hover {
-            background-color: #c0392b;
-        }
-        
-        .btn-solid-warning {
-            background-color: #f39c12;
-            color: white;
-        }
-        
-        .btn-solid-warning:hover {
-            background-color: #d35400;
-        }
-        
-        /* Outline Buttons */
-        .btn-outline-primary {
-            background-color: transparent;
-            color: #3498db;
-            border: 2px solid #3498db;
-        }
-        
-        .btn-outline-primary:hover {
-            background-color: #3498db;
-            color: white;
-        }
-        
-        .btn-outline-success {
-            background-color: transparent;
-            color: #2ecc71;
-            border: 2px solid #2ecc71;
-        }
-        
-        .btn-outline-success:hover {
-            background-color: #2ecc71;
-            color: white;
-        }
-        
-        /* Ghost Buttons */
-        .btn-ghost {
-            background-color: transparent;
-            color: #3498db;
-            border: none;
-        }
-        
-        .btn-ghost:hover {
-            background-color: rgba(52, 152, 219, 0.1);
-        }
-        
-        /* Rounded Buttons */
-        .btn-rounded {
-            border-radius: 50px;
-        }
-        
-        /* Icon Buttons */
-        .btn-icon {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-        }
-        
-        /* Floating Action Button */
-        .btn-fab {
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            background-color: #3498db;
-            color: white;
-            font-size: 24px;
-        }
-        
-        .btn-fab:hover {
-            box-shadow: 0 6px 12px rgba(0,0,0,0.3);
-            transform: translateY(-2px);
-        }
-        
-        /* Gradient Buttons */
-        .btn-gradient {
-            background: linear-gradient(45deg, #3498db, #9b59b6);
-            color: white;
-            border: none;
-        }
-        
-        .btn-gradient:hover {
-            background: linear-gradient(45deg, #2980b9, #8e44ad);
-        }
-        
-        /* 3D Buttons */
-        .btn-3d {
-            position: relative;
-            box-shadow: 0 4px 0 #2980b9;
-            top: 0;
-        }
-        
-        .btn-3d:hover {
-            top: 2px;
-            box-shadow: 0 2px 0 #2980b9;
-        }
-        
-        .btn-3d:active {
-            top: 4px;
-            box-shadow: none;
-        }
-        
-        /* Animated Buttons */
-        .btn-animated {
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .btn-animated::after {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 5px;
-            height: 5px;
-            background: rgba(255, 255, 255, 0.5);
-            opacity: 0;
-            border-radius: 100%;
-            transform: scale(1, 1) translate(-50%);
-            transform-origin: 50% 50%;
-        }
-        
-        .btn-animated:focus:not(:active)::after {
-            animation: ripple 1s ease-out;
-        }
-        
-        @keyframes ripple {
-            0% {
-                transform: scale(0, 0);
-                opacity: 0.5;
-            }
-            100% {
-                transform: scale(20, 20);
-                opacity: 0;
-            }
-        }
-        
-        /* Toggle Switch Button */
-        .toggle-switch {
-            position: relative;
-            display: inline-block;
-            width: 60px;
-            height: 34px;
-        }
-        
-        .toggle-switch input {
-            opacity: 0;
-            width: 0;
-            height: 0;
-        }
-        
-        .toggle-slider {
-            position: absolute;
-            cursor: pointer;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background-color: #ccc;
-            transition: .4s;
-            border-radius: 34px;
-        }
-        
-        .toggle-slider:before {
-            position: absolute;
-            content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
-            bottom: 4px;
-            background-color: white;
-            transition: .4s;
-            border-radius: 50%;
-        }
-        
-        input:checked + .toggle-slider {
-            background-color: #2196F3;
-        }
-        
-        input:checked + .toggle-slider:before {
-            transform: translateX(26px);
-        }
-        
-        /* Responsive Adjustments */
-        @media (max-width: 768px) {
-            .button-grid {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .button-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        /* Glass Morphism buttons */
-                .btn-glass {
-            background: rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-        }
-
-        .btn-glass:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-        }
-
-        .btn-glass-rainbow {
-            background: linear-gradient(
-                45deg,
-                rgba(255, 0, 0, 0.2),
-                rgba(255, 165, 0, 0.2),
-                rgba(255, 255, 0, 0.2),
-                rgba(0, 128, 0, 0.2),
-                rgba(0, 0, 255, 0.2),
-                rgba(75, 0, 130, 0.2),
-                rgba(238, 130, 238, 0.2)
-            );
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.3);
-            color: white;
-        }
-        /* retro */
-        .btn-retro {
-            background: #ff3355;
-            color: white;
-            border: 4px solid #000;
-            border-radius: 0;
-            font-family: 'Press Start 2P', cursive;
-            text-shadow: 3px 3px 0 #000;
-            box-shadow: 5px 5px 0 #000;
-            position: relative;
-            transition: all 0.1s;
-        }
-
-        .btn-retro:hover {
-            transform: translate(2px, 2px);
-            box-shadow: 3px 3px 0 #000;
-        }
-
-        .btn-8bit {
-            background: #55aaff;
-            color: white;
-            border: none;
-            border-radius: 0;
-            padding: 12px;
-            position: relative;
-            clip-path: polygon(
-                0 0,
-                calc(100% - 8px) 0,
-                100% 8px,
-                100% 100%,
-                8px 100%,
-                0 calc(100% - 8px)
-            );
-        }
-
-        .btn-8bit:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 8px;
-            bottom: 8px;
-            background: rgba(0,0,0,0.1);
-            clip-path: polygon(
-                0 0,
-                calc(100% - 8px) 0,
-                100% 8px,
-                100% 100%,
-                8px 100%,
-                0 calc(100% - 8px)
-            );
-        }
-
-        /* scifi */
-        .btn-hud {
-            background: rgba(0, 255, 255, 0.1);
-            color: #0ff;
-            border: 1px solid #0ff;
-            border-radius: 2px;
-            font-family: 'Orbitron', sans-serif;
-            letter-spacing: 1px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-hud:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(
-                90deg,
-                transparent,
-                rgba(0, 255, 255, 0.4),
-                transparent
-            );
-            transition: 0.5s;
-        }
-
-        .btn-hud:hover:before {
-            left: 100%;
-        }
-
-        .btn-radar {
-            background: rgba(0, 255, 0, 0.1);
-            color: #0f0;
-            border: 1px solid #0f0;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-        }
-
-        .btn-radar:after {
-            content: '';
-            position: absolute;
-            top: -5px;
-            left: -5px;
-            right: -5px;
-            bottom: -5px;
-            border: 1px solid #0f0;
-            border-radius: 50%;
-            animation: radarPulse 2s linear infinite;
-        }
-
-        @keyframes radarPulse {
-            0% {
-                transform: scale(0.5);
-                opacity: 0;
-            }
-            50% {
-                opacity: 0.4;
-            }
-            100% {
-                transform: scale(1.5);
-                opacity: 0;
-            }
-        }
-        /* Natural */
-        .btn-leaf {
-            background: linear-gradient(135deg, #2e8b57, #3cb371);
-            color: white;
-            border: none;
-            border-radius: 50px 5px 50px 5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-leaf:before {
-            content: '🍃';
-            position: absolute;
-            right: 10px;
-            opacity: 0.3;
-        }
-
-        .btn-water {
-            background: linear-gradient(135deg, #1e90ff, #00bfff);
-            color: white;
-            border: none;
-            border-radius: 5px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-water:after {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(30deg);
-            animation: waterShine 3s infinite;
-        }
-
-        @keyframes waterShine {
-            0% { left: -50%; }
-            100% { left: 150%; }
-        }
-        /* Luxury */
-        .btn-gold {
-            background: linear-gradient(
-                135deg,
-                #cfb53b,
-                #f6e0a1,
-                #cfb53b,
-                #f6e0a1,
-                #cfb53b
-            );
-            color: #333;
-            border: none;
-            border-radius: 8px;
-            font-weight: bold;
-            text-shadow: 0 1px 1px rgba(255,255,255,0.5);
-            box-shadow: 0 4px 15px rgba(207, 181, 59, 0.4);
-        }
-
-        .btn-velvet {
-            background: linear-gradient(135deg, #800020, #a52a2a);
-            color: #f5f5f5;
-            border: none;
-            border-radius: 8px;
-            font-family: 'Times New Roman', serif;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            box-shadow: inset 0 0 10px rgba(0,0,0,0.3);
-            position: relative;
-        }
-
-        .btn-velvet:before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(
-                135deg,
-                rgba(255,255,255,0.1),
-                rgba(255,255,255,0)
-            );
-            pointer-events: none;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Orbitron:wght@400;500&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <h1>Button Design Collection</h1>
-        
-        <!-- Solid Buttons -->
+
+        <!-- Standard Buttons -->
         <section class="button-section">
-            <h2>Solid Buttons</h2>
+            <h2>Standard Buttons</h2>
             <div class="button-grid">
                 <button class="btn btn-solid-primary">Primary</button>
                 <button class="btn btn-solid-success">Success</button>
@@ -545,7 +21,7 @@
                 <button class="btn btn-solid-warning">Warning</button>
             </div>
         </section>
-        
+
         <!-- Outline Buttons -->
         <section class="button-section">
             <h2>Outline Buttons</h2>
@@ -553,70 +29,37 @@
                 <button class="btn btn-outline-primary">Primary</button>
                 <button class="btn btn-outline-success">Success</button>
                 <button class="btn btn-outline-primary btn-rounded">Rounded</button>
+                <button class="btn btn-outline-danger">Danger</button>
             </div>
         </section>
-        
-        <!-- Ghost Buttons -->
+
+        <!-- Ghost & Icon Buttons -->
         <section class="button-section">
-            <h2>Ghost Buttons</h2>
+            <h2>Ghost & Icon Buttons</h2>
             <div class="button-grid">
                 <button class="btn btn-ghost">Ghost Button</button>
-                <button class="btn btn-ghost btn-rounded">Rounded Ghost</button>
-            </div>
-        </section>
-        
-        <!-- Icon Buttons -->
-        <section class="button-section">
-            <h2>Icon Buttons</h2>
-            <div class="button-grid">
                 <button class="btn btn-solid-primary btn-icon">
-                    <span>★</span> Star
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M3.612 15.443c-.386.198-.824-.149-.746-.592l.83-4.73L.173 6.765c-.329-.314-.158-.888.283-.95l4.898-.696L7.538.792c.197-.39.73-.39.927 0l2.184 4.327 4.898.696c.441.062.612.636.282.95l-3.522 3.356.83 4.73c.078.443-.36.79-.746.592L8 13.187l-4.389 2.256z"/>
+                    </svg>
+                    Star
                 </button>
-                <button class="btn btn-outline-success btn-icon">
-                    <span>✓</span> Accept
+                 <button class="btn btn-outline-success btn-icon">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+                        <path d="M13.854 3.646a.5.5 0 0 1 0 .708l-7 7a.5.5 0 0 1-.708 0l-3.5-3.5a.5.5 0 1 1 .708-.708L6.5 10.293l6.646-6.647a.5.5 0 0 1 .708 0z"/>
+                    </svg>
+                    Accept
                 </button>
             </div>
         </section>
-        
-        <!-- Floating Action Button -->
+
+        <!-- Special Interaction Buttons -->
         <section class="button-section">
-            <h2>Floating Action Button</h2>
+            <h2>Special Interaction</h2>
             <div class="button-grid">
                 <button class="btn-fab">+</button>
-            </div>
-        </section>
-        
-        <!-- Gradient Buttons -->
-        <section class="button-section">
-            <h2>Gradient Buttons</h2>
-            <div class="button-grid">
-                <button class="btn btn-gradient">Gradient</button>
-                <button class="btn btn-gradient btn-rounded">Rounded Gradient</button>
-            </div>
-        </section>
-        
-        <!-- 3D Buttons -->
-        <section class="button-section">
-            <h2>3D Buttons</h2>
-            <div class="button-grid">
                 <button class="btn btn-solid-primary btn-3d">3D Button</button>
-                <button class="btn btn-solid-danger btn-3d">3D Danger</button>
-            </div>
-        </section>
-        
-        <!-- Animated Buttons -->
-        <section class="button-section">
-            <h2>Animated Buttons</h2>
-            <div class="button-grid">
                 <button class="btn btn-solid-primary btn-animated">Ripple Effect</button>
-                <button class="btn btn-outline-primary btn-animated">Hover Me</button>
-            </div>
-        </section>
-        
-        <!-- Toggle Switch -->
-        <section class="button-section">
-            <h2>Toggle Switch</h2>
-            <div class="button-grid">
                 <label class="toggle-switch">
                     <input type="checkbox">
                     <span class="toggle-slider"></span>
@@ -624,29 +67,24 @@
             </div>
         </section>
 
-        <!-- Add this section to your HTML -->
+        <!-- Themed Buttons -->
         <section class="button-section">
-            <h2>🌈 Additional Creative Buttons</h2>
+            <h2>Themed Buttons</h2>
             <div class="button-grid">
+                <!-- Gradient -->
+                <button class="btn btn-gradient">Gradient</button>
                 <!-- Glassmorphism -->
-                <button class="btn btn-glass">Glass Button</button>
-                <button class="btn btn-glass-rainbow">Rainbow Glass</button>
-                
+                <button class="btn btn-glass">Glass</button>
                 <!-- Retro Gaming -->
-                <button class="btn btn-retro">START GAME</button>
-                <button class="btn btn-8bit">8-BIT STYLE</button>
-                
+                <button class="btn btn-retro">START</button>
                 <!-- Sci-Fi HUD -->
-                <button class="btn btn-hud">SYSTEM ENGAGE</button>
-                <button class="btn btn-radar">SCAN</button>
-                
+                <button class="btn btn-hud">ENGAGE</button>
                 <!-- Nature Inspired -->
-                <button class="btn btn-leaf">Eco Friendly</button>
-                <button class="btn btn-water">Pure Water</button>
-                
-                <!-- Luxury -->
-                <button class="btn btn-gold">24K Gold</button>
-                <button class="btn btn-velvet">Velvet Touch</button>
+                <button class="btn btn-leaf">Eco</button>
+                 <!-- Luxury -->
+                <button class="btn btn-gold">Gold</button>
+                 <!-- Neumorphic -->
+                <button class="btn btn-neumorphic">Neumorphic</button>
             </div>
         </section>
     </div>
