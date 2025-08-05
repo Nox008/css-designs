@@ -194,6 +194,69 @@ input:checked + .toggle-slider:before { transform: translateX(26px); }
     box-shadow: inset 8px 8px 16px #d1d1d1, inset -8px -8px 16px #ffffff;
 }
 
+/* --- Glitch Button --- */
+.btn-glitch {
+    background: #000;
+    color: #fff;
+    border-radius: 8px;
+    border: 2px solid #fff;
+    position: relative;
+    z-index: 1;
+}
+.btn-glitch:hover {
+    cursor: pointer;
+}
+.btn-glitch::before,
+.btn-glitch::after {
+    content: attr(data-text);
+    position: absolute;
+    top: -2px; 
+    left: -2px;
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    background: #000;
+    overflow: hidden;
+    z-index: -1;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.btn-glitch:hover::before {
+    left: 2px;
+    text-shadow: -1px 0 #ff00c1;
+    animation: glitch 1.5s infinite linear alternate-reverse;
+}
+.btn-glitch:hover::after {
+    left: -2px;
+    text-shadow: -1px 0 #00fff9, 1px 1px #ff00c1;
+    animation: glitch 1s infinite linear alternate-reverse;
+}
+
+@keyframes glitch {
+    0% { clip-path: inset(95% 0 0 0); }
+    5% { clip-path: inset(50% 0 48% 0); }
+    10% { clip-path: inset(8% 0 60% 0); }
+    15% { clip-path: inset(40% 0 55% 0); }
+    20% { clip-path: inset(20% 0 75% 0); }
+    25% { clip-path: inset(60% 0 8% 0); }
+    30% { clip-path: inset(33% 0 40% 0); }
+    35% { clip-path: inset(70% 0 25% 0); }
+    40% { clip-path: inset(42% 0 50% 0); }
+    45% { clip-path: inset(15% 0 80% 0); }
+    50% { clip-path: inset(55% 0 33% 0); }
+    55% { clip-path: inset(5% 0 90% 0); }
+    60% { clip-path: inset(92% 0 5% 0); }
+    65% { clip-path: inset(65% 0 30% 0); }
+    70% { clip-path: inset(10% 0 85% 0); }
+    75% { clip-path: inset(85% 0 10% 0); }
+    80% { clip-path: inset(45% 0 52% 0); }
+    85% { clip-path: inset(25% 0 70% 0); }
+    90% { clip-path: inset(75% 0 20% 0); }
+    95% { clip-path: inset(52% 0 45% 0); }
+    100% { clip-path: inset(2% 0 95% 0); }
+}
+
 
 /* --- Responsive Adjustments --- */
 @media (max-width: 768px) {
